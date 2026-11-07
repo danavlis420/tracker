@@ -3,2336 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MealPrep & Finanzas Hub | $150k ARS</title>
-    <!-- Tailwind CSS -->
+    <title>flog.dani.420 // FINANZAS, MEAL-PREP & HÁBITOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            900: '#064e3b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            overflow-x: hidden;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
-        }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.78);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .plate-shadow {
-            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), inset 0 2px 6px rgba(255, 255, 255, 0.15);
-        }
-        .tab-active {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: #ffffff;
-            box-shadow: 0 4px 15px -2px rgba(16, 185, 129, 0.4);
-        }
-        .gemini-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
-        }
-        .gemini-border {
-            border-image: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899) 1;
-        }
-        @keyframes pulse-subtle {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-        }
-        .animate-pulse-subtle {
-            animation: pulse-subtle 2.5s infinite ease-in-out;
-        }
-        /* Markdown-like chat styling */
-        .chat-msg p { margin-bottom: 0.5rem; }
-        .chat-msg p:last-child { margin-bottom: 0; }
-        .chat-msg ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 0.5rem; }
-        .chat-msg strong { color: #38bdf8; font-weight: 600; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+<body class="min-h-screen flex flex-col crt-scanlines">
 
-    <!-- TOP HEADER -->
-    <header class="sticky top-0 z-30 glass-card border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-            <!-- Brand Title -->
+    <!-- 1. TOPBAR FOTOLOG -->
+    <div class="flog-topbar text-xs px-3 py-1 flex items-center justify-between border-b-2 border-black">
+        <div class="flex items-center gap-2">
+            <span class="font-pixel text-base tracking-wider text-acid">★ FOTOLOG://DANI_HUB_2000</span>
+            <span class="hidden sm:inline text-stone-400">|</span>
+            <span class="hidden sm:inline text-[11px] bg-purple-950 text-purple-300 border border-purple-500 px-1.5 py-0.2 font-bold">
+                [GOLD CAMERA MEMBER 420]
+            </span>
+        </div>
+        <div class="flex items-center gap-3 font-mono text-[11px]">
+            <button type="button" onclick="window.AppCore && AppCore.toggleCRT()" class="hover:text-acid underline cursor-pointer">
+                [CRT: ON/OFF]
+            </button>
+            <span id="top-date-display" class="text-amber-300">NOV 2026</span>
+        </div>
+    </div>
+
+    <!-- 2. MARQUEE -->
+    <div class="bg-black border-b-2 border-stone-800 py-1 px-2 overflow-hidden whitespace-nowrap text-xs font-mono text-acid">
+        <div class="marquee-track inline-block">
+            <span id="marquee-live-text">
+                +++ BIENVENIDO AL SISTEMA CENTRAL DE FINANZAS, MEAL PREP ($150K ARS) Y HÁBITOS +++ MANTIENE TUS CUENTAS CLARAS, EL FREEZER LLENO (REGLA 45/30/25) Y LOS BUENOS HUMOS +++
+            </span>
+        </div>
+    </div>
+
+    <!-- 3. HEADER PRINCIPAL + PESTAÑAS DE MÓDULOS -->
+    <header class="sticky top-0 z-30 retro-panel border-b-2">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+            <!-- Título -->
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-900/40">
-                    <i class="fa-solid fa-bowl-rice text-white text-lg"></i>
+                <div class="w-11 h-11 retro-box bg-acid-dark flex items-center justify-center text-acid text-xl">
+                    <i class="fa-solid fa-skull-crossbones"></i>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <h1 class="font-bold text-base sm:text-lg tracking-tight text-white">MealPrep & Finanzas</h1>
-                        <span class="hidden sm:inline-block text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                            Regla 45 / 30 / 25
+                        <h1 class="font-pixel text-2xl sm:text-3xl tracking-wide text-white leading-none">
+                            CASHFLOW_&_WEEDPREP.EXE
+                        </h1>
+                        <span class="hidden md:inline-block text-[10px] font-bold uppercase px-2 py-0.5 bg-black text-acid border border-acid">
+                            v2.5 MODULAR
                         </span>
                     </div>
-                    <p class="text-xs text-slate-400 hidden sm:block">Presupuesto inteligente $150.000 ARS • Freezer • Hábitos</p>
+                    <p class="text-[11px] text-stone-400 font-mono">
+                        Finanzas Mensuales • MealPrep $150k • Módulos de Hábitos
+                    </p>
                 </div>
             </div>
 
-            <!-- Live Quick Metrics Pill (Desktop) -->
-            <div class="hidden lg:flex items-center gap-4 bg-slate-900/90 border border-slate-800 px-4 py-1.5 rounded-2xl text-xs">
-                <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span class="text-slate-400">Presupuesto Comida:</span>
-                    <span id="header-food-budget" class="font-bold text-white">$128.000 / $150.000</span>
+            <!-- Contadores en vivo -->
+            <div class="hidden xl:flex items-center gap-3 bg-black border-2 border-stone-700 px-3 py-1.5 text-xs font-mono">
+                <div class="flex items-center gap-1.5">
+                    <span class="text-stone-400">SALDO MES:</span>
+                    <span id="header-net-balance" class="hit-counter text-acid">$0</span>
                 </div>
-                <div class="h-4 w-px bg-slate-800"></div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-snowflake text-sky-400"></i>
-                    <span class="text-slate-400">Porciones Freezer:</span>
-                    <span id="header-freezer-count" class="font-bold text-sky-300">76 mod.</span>
+                <span class="text-stone-700">|</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-stone-400">COMIDA:</span>
+                    <span id="header-food-budget" class="hit-counter text-amber-400">$0 / $150k</span>
                 </div>
-                <div class="h-4 w-px bg-slate-800"></div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-fire text-amber-400"></i>
-                    <span class="text-slate-400">Hábitos sem:</span>
-                    <span id="header-habit-rate" class="font-bold text-amber-300">0%</span>
+                <span class="text-stone-700">|</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-stone-400">FREEZER:</span>
+                    <span id="header-freezer-count" class="hit-counter text-purple-300">0 mod</span>
+                </div>
+                <span class="text-stone-700">|</span>
+                <div class="flex items-center gap-1.5">
+                    <span class="text-stone-400">HÁBITOS:</span>
+                    <span id="header-habit-rate" class="hit-counter text-acid">0%</span>
                 </div>
             </div>
 
-            <!-- Action Buttons: Cloud Sync Quick Controls, API Status & Gemini Assistant -->
-            <div class="flex items-center gap-1.5 sm:gap-2">
-                <!-- Quick Gist Pull / Push Buttons -->
-                <div class="hidden sm:flex items-center bg-slate-900/90 border border-slate-700/80 rounded-xl p-0.5">
-                    <button onclick="pullFromGist()" id="header-btn-pull" title="Descargar datos desde GitHub Gist (Pull)" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-sky-300 transition flex items-center gap-1 text-xs font-medium">
-                        <i class="fa-solid fa-cloud-arrow-down text-sky-400"></i>
-                        <span class="hidden xl:inline">Pull</span>
+            <!-- Botones de Sincronización y Oráculo -->
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black border-2 border-stone-700">
+                    <button type="button" onclick="window.SyncAI && SyncAI.pullFromGist()" class="px-2.5 py-1.5 hover:bg-stone-900 text-sky-300 text-xs font-mono flex items-center gap-1 border-r border-stone-700">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>PULL</span>
                     </button>
-                    <div class="h-3.5 w-px bg-slate-800"></div>
-                    <button onclick="pushToGist(false)" id="header-btn-push" title="Subir datos a GitHub Gist (Push)" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-emerald-300 transition flex items-center gap-1 text-xs font-medium">
-                        <i class="fa-solid fa-cloud-arrow-up text-emerald-400"></i>
-                        <span class="hidden xl:inline">Push</span>
+                    <button type="button" onclick="window.SyncAI && SyncAI.pushToGist(false)" class="px-2.5 py-1.5 hover:bg-stone-900 text-acid text-xs font-mono flex items-center gap-1">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>PUSH</span>
                     </button>
                 </div>
 
-                <!-- Sync & API Settings Button with Live Status Dot -->
-                <button onclick="openBackupModal()" title="Configurar Sincronización Gist, Backup JSON y API Key segura" class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-2 text-xs font-semibold">
-                    <span id="header-sync-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-                    <i class="fa-solid fa-cloud-bolt text-sky-400"></i>
-                    <span class="hidden md:inline">Sincronizar & API</span>
+                <button type="button" onclick="window.SyncAI && SyncAI.openBackupModal()" class="retro-btn px-3 py-1.5 bg-stone-900 text-stone-200 text-xs font-mono flex items-center gap-2">
+                    <span id="header-sync-dot" class="w-2.5 h-2.5 inline-block bg-amber-400 border border-black"></span>
+                    <i class="fa-solid fa-floppy-disk text-purple-400"></i>
+                    <span>GIST / JSON</span>
                 </button>
 
-                <button onclick="toggleGeminiDrawer()" class="px-3.5 py-2 rounded-xl gemini-gradient text-white font-semibold text-xs sm:text-sm shadow-lg shadow-purple-900/40 hover:opacity-95 transition flex items-center gap-2">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <span>Chat Gemini</span>
+                <button type="button" onclick="window.SyncAI && SyncAI.toggleGeminiDrawer()" class="retro-btn retro-btn-purple px-3 py-1.5 text-xs font-mono font-bold flex items-center gap-1.5">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>ORÁCULO_IA</span>
                 </button>
             </div>
         </div>
 
-        <!-- NAVIGATION TABS BAR -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-2.5 pt-1 overflow-x-auto">
-            <nav class="flex space-x-2 min-w-max" aria-label="Tabs">
-                <button onclick="switchTab('plato')" id="tab-btn-plato" class="tab-btn tab-active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fa-solid fa-utensils"></i>
-                    <span>1. Meal Prep & Plato (45/30/25)</span>
-                </button>
-                <button onclick="switchTab('presupuesto')" id="tab-btn-presupuesto" class="tab-btn bg-slate-800/70 hover:bg-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fa-solid fa-snowflake"></i>
-                    <span>2. Presupuesto $150k & Freezer</span>
-                </button>
-                <button onclick="switchTab('gastos')" id="tab-btn-gastos" class="tab-btn bg-slate-800/70 hover:bg-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fa-solid fa-wallet"></i>
-                    <span>3. Gastos Generales</span>
-                </button>
-                <button onclick="switchTab('habitos')" id="tab-btn-habitos" class="tab-btn bg-slate-800/70 hover:bg-slate-800 text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <span>4. Hábitos Diarios</span>
-                </button>
-                <button onclick="openBackupModal()" id="tab-btn-sincronizar" class="tab-btn bg-slate-800/70 hover:bg-slate-800 text-sky-300 border border-sky-500/20 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fa-brands fa-github"></i>
-                    <span>5. Sincronizar Gist, JSON & API</span>
-                </button>
-            </nav>
+        <!-- BARRA DE MÓDULOS (DIBUJADA FIJA EN EL HTML) -->
+        <div class="bg-black border-t-2 border-stone-700">
+            <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 overflow-x-auto flex items-center gap-3">
+                <span class="font-pixel text-lg text-amber-300 tracking-wider shrink-0">
+                    ▶ MÓDULOS:
+                </span>
+                <nav id="main-module-nav" class="flex space-x-2 min-w-max font-mono text-xs" aria-label="Módulos">
+                    <button type="button" onclick="window.AppCore && AppCore.switchModule('finanzas')"
+                            class="retro-btn tab-retro-active px-4 py-2 flex items-center gap-2">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                        <span>1. FINANZAS & FLUJO DEL MES</span>
+                    </button>
+                    <button type="button" onclick="window.AppCore && AppCore.switchModule('mealprep')"
+                            class="retro-btn bg-stone-900 text-stone-200 px-4 py-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bowl-rice"></i>
+                        <span>2. MEAL-PREP & FREEZER ($150K)</span>
+                    </button>
+                    <button type="button" onclick="window.AppCore && AppCore.switchModule('habitos')"
+                            class="retro-btn bg-stone-900 text-stone-200 px-4 py-2 flex items-center gap-2">
+                        <i class="fa-solid fa-cubes"></i>
+                        <span>3. HÁBITOS & MÓDULOS (+)</span>
+                    </button>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
-
-        <!-- ==========================================
-             VIEW 1: MEAL PREP & CONSTRUCTOR DE PLATO
-             ========================================== -->
-        <section id="view-plato" class="space-y-6">
-            <!-- Hero Banner Explanation -->
-            <div class="glass-card rounded-2xl p-4 sm:p-6 border border-emerald-500/20 bg-gradient-to-r from-slate-900 via-slate-900 to-emerald-950/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div class="space-y-1">
-                    <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                        <i class="fa-solid fa-scale-balanced"></i> Método de Almuerzo y Cena Inteligente
-                    </div>
-                    <h2 class="text-xl sm:text-2xl font-bold text-white">Armador de Platos 10-15 Minutos</h2>
-                    <p class="text-xs sm:text-sm text-slate-300 max-w-2xl">
-                        Combiná tus módulos del freezer cumpliendo tu meta nutricional: <strong class="text-emerald-400">~45-50% Verduras</strong> (mitad o un poco menos), <strong class="text-rose-400">~25-30%+ Proteínas</strong> (un cuarto o más) y <strong class="text-amber-400">~25% Carbohidratos</strong> (un cuarto).
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 shrink-0">
-                    <button onclick="askGeminiQuick('¿Qué almuerzo o cena me recomendás armar hoy en 10 minutos según lo que me queda en el freezer respetando el 45/30/25?')" class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-300 border border-sky-500/30 text-xs font-semibold flex items-center gap-2 transition">
-                        <i class="fa-solid fa-wand-magic-sparkles text-sky-400"></i> Sugerime qué comer hoy
-                    </button>
-                </div>
-            </div>
-
-            <!-- Interactive Builder + Visual Plate Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                
-                <!-- Left Column: Visual Plate & Proportions (5 cols on desktop) -->
-                <div class="lg:col-span-5 glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h3 class="font-bold text-base sm:text-lg text-white">Visualizador de tu Plato</h3>
-                            <p class="text-xs text-slate-400">Equilibrio nutricional en tiempo real</p>
-                        </div>
-                        <span id="plate-status-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5">
-                            <i class="fa-solid fa-circle-check"></i> Regla Cumplida
-                        </span>
-                    </div>
-
-                    <!-- Dynamic Visual Plate Graphic -->
-                    <div class="flex flex-col items-center justify-center py-2">
-                        <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-3 bg-slate-800 border-4 border-slate-700 plate-shadow flex items-center justify-center">
-                            <!-- Conic Gradient Plate Representation -->
-                            <div id="visual-plate-circle" class="w-full h-full rounded-full transition-all duration-500 relative flex items-center justify-center overflow-hidden" style="background: conic-gradient(#10b981 0% 45%, #f43f5e 45% 75%, #f59e0b 75% 100%);">
-                                <!-- Inner Plate Overlay Labels -->
-                                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-slate-900/95 border border-slate-700 flex flex-col items-center justify-center text-center p-2 shadow-inner">
-                                    <span id="plate-center-flavor" class="text-[10px] uppercase tracking-wider font-bold text-sky-400">Estilo Chao Fan</span>
-                                    <span id="plate-center-title" class="text-xs font-bold text-white leading-tight mt-0.5 line-clamp-2">Plato Personalizado</span>
-                                    <span id="plate-center-time" class="text-[11px] text-emerald-400 font-medium mt-1"><i class="fa-regular fa-clock"></i> ~12 min</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Legend Pills -->
-                        <div class="grid grid-cols-3 gap-2 w-full mt-5">
-                            <div class="bg-slate-900/90 border border-emerald-500/30 rounded-xl p-2.5 text-center">
-                                <div class="flex items-center justify-center gap-1.5 text-emerald-400 text-xs font-bold">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                                    <span id="lbl-veg-pct">45%</span>
-                                </div>
-                                <p class="text-[11px] text-slate-300 font-medium mt-0.5">Verduras</p>
-                                <p class="text-[10px] text-slate-500">Meta: 45-50%</p>
-                            </div>
-                            <div class="bg-slate-900/90 border border-rose-500/30 rounded-xl p-2.5 text-center">
-                                <div class="flex items-center justify-center gap-1.5 text-rose-400 text-xs font-bold">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-                                    <span id="lbl-prot-pct">30%</span>
-                                </div>
-                                <p class="text-[11px] text-slate-300 font-medium mt-0.5">Proteínas</p>
-                                <p class="text-[10px] text-slate-500">Meta: ≥25-30%</p>
-                            </div>
-                            <div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-2.5 text-center">
-                                <div class="flex items-center justify-center gap-1.5 text-amber-400 text-xs font-bold">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-                                    <span id="lbl-carb-pct">25%</span>
-                                </div>
-                                <p class="text-[11px] text-slate-300 font-medium mt-0.5">Carbohidratos</p>
-                                <p class="text-[10px] text-slate-500">Meta: ≤25%</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Proportion Sliders Fine-Tuning -->
-                    <div class="bg-slate-900/70 rounded-xl p-3.5 border border-slate-800 space-y-3">
-                        <div class="flex items-center justify-between text-xs">
-                            <span class="font-semibold text-slate-300"><i class="fa-solid fa-sliders text-emerald-400 mr-1"></i> Ajuste de Proporción del Plato</span>
-                            <button onclick="resetPlateProportions()" class="text-[11px] text-emerald-400 hover:underline">Restaurar 45 / 30 / 25</button>
-                        </div>
-                        <div class="space-y-2 text-xs">
-                            <div>
-                                <div class="flex justify-between text-slate-300 mb-1">
-                                    <span>🥦 Verduras (Mitad o casi mitad)</span>
-                                    <span id="slider-veg-val" class="font-bold text-emerald-400">45%</span>
-                                </div>
-                                <input type="range" id="slider-veg" min="30" max="60" step="5" value="45" oninput="handleProportionSlider('veg', this.value)" class="w-full accent-emerald-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg">
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-slate-300 mb-1">
-                                    <span>🥩 Proteínas (Un cuarto o más)</span>
-                                    <span id="slider-prot-val" class="font-bold text-rose-400">30%</span>
-                                </div>
-                                <input type="range" id="slider-prot" min="20" max="45" step="5" value="30" oninput="handleProportionSlider('prot', this.value)" class="w-full accent-rose-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Interactive Freezer Module Selector (7 cols on desktop) -->
-                <div class="lg:col-span-7 glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-5">
-                    <div>
-                        <h3 class="font-bold text-base sm:text-lg text-white">Combiná tus Módulos del Freezer y Alacena</h3>
-                        <p class="text-xs text-slate-400">Elegí cada componente o cargá una de las 6 alternativas rápidas de abajo</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- 1. Verduras Selector (45-50%) -->
-                        <div class="bg-slate-900/90 border border-emerald-500/30 rounded-xl p-4 space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <label class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-leaf"></i> 1. Base de Verduras (~45-50%)
-                                </label>
-                                <span class="text-[11px] bg-emerald-500/15 text-emerald-300 px-2 py-0.5 rounded-md font-medium">~200-250g</span>
-                            </div>
-                            <select id="select-veg" onchange="updateCustomPlate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-emerald-500">
-                                <option value="wok_mix" data-stock="mixWok">Mix Wok Congelado + Repollo en juliana (Cero picado)</option>
-                                <option value="acelga_sesamo" data-stock="acelga">Bollito Acelga/Espinaca al sésamo + Zanahoria salteada</option>
-                                <option value="ensalada_repollo" data-stock="none">Super Ensalada de Repollo, Zanahoria y Verdeo (Heladera)</option>
-                                <option value="relleno_tarta" data-stock="acelga">Relleno de Acelga y Cebolla (en Tartita) + Hojas verdes</option>
-                            </select>
-                            <p id="veg-stock-hint" class="text-[11px] text-slate-400 flex items-center gap-1.5">
-                                <i class="fa-regular fa-snowflake text-sky-400"></i> Disponible en freezer
-                            </p>
-                        </div>
-
-                        <!-- 2. Proteínas Selector (25-30%+) -->
-                        <div class="bg-slate-900/90 border border-rose-500/30 rounded-xl p-4 space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <label class="text-xs font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-drumstick-bite"></i> 2. Proteína Principal (~30%)
-                                </label>
-                                <span class="text-[11px] bg-rose-500/15 text-rose-300 px-2 py-0.5 rounded-md font-medium">~160-200g</span>
-                            </div>
-                            <select id="select-prot" onchange="updateCustomPlate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-rose-500">
-                                <option value="tiras_wok" data-stock="marinadas">Bolsita Carne/Pollo/Cerdo en tiras marinadas + 1 Huevo</option>
-                                <option value="milanesas" data-stock="milanesas">2 Milanesas caseras (Pollo o Carne) al horno</option>
-                                <option value="tarta_proteica" data-stock="tartitas">Pollo en cubos + Huevo + Queso Port Salut (en Tartita)</option>
-                                <option value="huevos_queso" data-stock="none">3 Huevos revueltos/plancha + Bastones de Queso Port Salut</option>
-                            </select>
-                            <p id="prot-stock-hint" class="text-[11px] text-slate-400 flex items-center gap-1.5">
-                                <i class="fa-regular fa-snowflake text-sky-400"></i> Disponible en freezer
-                            </p>
-                        </div>
-
-                        <!-- 3. Carbohidratos Selector (25%) -->
-                        <div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-4 space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <label class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-wheat-awn"></i> 3. Carbohidrato (~25%)
-                                </label>
-                                <span class="text-[11px] bg-amber-500/15 text-amber-300 px-2 py-0.5 rounded-md font-medium">~120-150g cocido</span>
-                            </div>
-                            <select id="select-carb" onchange="updateCustomPlate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-500">
-                                <option value="arroz_freezer" data-stock="arroz">Bloque de Arroz pre-cocido del freezer (Ideal Chao Fan)</option>
-                                <option value="arroz_carolina" data-stock="none">Arroz Doble Carolina tibio (Ideal Bibimbap / Guarnición)</option>
-                                <option value="fideos_lomein" data-stock="none">Fideos Tallarines salteados al Wok (Estilo Lo Mein)</option>
-                                <option value="masa_tartita" data-stock="none">Masa casera rápida de Tartita individual</option>
-                                <option value="papas_rusticas" data-stock="none">Papas rústicas al horno con piel (1 unidad mediana)</option>
-                            </select>
-                            <p id="carb-stock-hint" class="text-[11px] text-slate-400 flex items-center gap-1.5">
-                                <i class="fa-regular fa-snowflake text-sky-400"></i> Disponible en freezer
-                            </p>
-                        </div>
-
-                        <!-- 4. Perfil de Sabor / Condimentos -->
-                        <div class="bg-slate-900/90 border border-sky-500/30 rounded-xl p-4 space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <label class="text-xs font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-pepper-hot"></i> 4. Perfil de Sabor & Toque Final
-                                </label>
-                                <span class="text-[11px] bg-sky-500/15 text-sky-300 px-2 py-0.5 rounded-md font-medium">Fondo Alacena</span>
-                            </div>
-                            <select id="select-flavor" onchange="updateCustomPlate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500">
-                                <option value="Estilo Chao Fan">Estilo Chao Fan (Soja, salsa de ostras, jengibre, verdeo fresco)</option>
-                                <option value="Estilo Bibimbap">Estilo Bibimbap (Ajo, soja, sésamo tostado y yema jugosa)</option>
-                                <option value="Estilo Lo Mein">Estilo Lo Mein Oriental (Soja, ostras, ajo y maicena)</option>
-                                <option value="Clásico Argentino">Clásico Argentino (Ajo, perejil, mostaza, limón u orégano)</option>
-                            </select>
-                            <p class="text-[11px] text-slate-400">
-                                <i class="fa-solid fa-fire-burner text-amber-400"></i> Cocción rápida en sartén/wok o asadera precalentada
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Step-by-Step Express Instructions Box -->
-                    <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">
-                                <i class="fa-solid fa-bolt mr-1"></i> Preparación Express de esta Combinación
-                            </span>
-                            <span id="recipe-cost-badge" class="text-xs font-semibold text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded-full">
-                                Costo aprox: ~$2.650 ARS / porción
-                            </span>
-                        </div>
-                        <p id="plate-instructions-text" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            Calentá el wok a fuego fuerte. Salteá la bolsita de carne/cerdo/pollo marinada (4 min), sumá el mix de vegetales directo del freezer y el bloque de arroz pre-cocido. Agregá salsa de soja, ostras y verdeo picado al apagar.
-                        </p>
-                    </div>
-
-                    <!-- Action Bar: Register Meal & Deduct from Freezer -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
-                        <div class="text-xs text-slate-400">
-                            Al registrar, se descuentan los módulos usados de tu <strong class="text-slate-200">Freezer</strong> y se marca tu <strong class="text-slate-200">hábito del día</strong>.
-                        </div>
-                        <button onclick="logCurrentPlateMeal()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-950/60 transition flex items-center justify-center gap-2 shrink-0">
-                            <i class="fa-solid fa-check-double"></i>
-                            <span>Cocinar / Descontar del Freezer</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6 Pre-Built Balanced Meal Prep Cards -->
-            <div class="space-y-3">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-layer-group text-emerald-400"></i>
-                            6 Alternativas Pre-Armadas (Cumplen 45% Verdura / 30% Prote / 25% Carbo)
-                        </h3>
-                        <p class="text-xs text-slate-400">Hacé clic en cualquiera para cargarla en tu plato o descontarla directamente del freezer</p>
-                    </div>
-                </div>
-
-                <div id="preset-meals-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <!-- Rendered dynamically via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             VIEW 2: PRESUPUESTO $150K & STOCK FREEZER
-             ========================================== -->
-        <section id="view-presupuesto" class="hidden space-y-6">
-            <!-- Top Financial Summary Cards for Food Budget -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- Card 1: Total Food Budget -->
-                <div class="glass-card rounded-2xl p-5 border border-emerald-500/30 space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Presupuesto Mensual Comida</span>
-                        <button onclick="editMonthlyBudgetLimit()" class="text-xs text-slate-400 hover:text-white">
-                            <i class="fa-solid fa-pen"></i> Editar tope
-                        </button>
-                    </div>
-                    <div class="flex items-baseline justify-between">
-                        <h3 id="food-budget-spent" class="text-2xl sm:text-3xl font-extrabold text-white">$0</h3>
-                        <span id="food-budget-limit" class="text-xs sm:text-sm text-slate-400">de $150.000 ARS</span>
-                    </div>
-                    <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
-                        <div id="food-budget-bar" class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500" style="width: 0%"></div>
-                    </div>
-                    <div class="flex justify-between text-xs text-slate-400">
-                        <span id="food-budget-remaining">Disponible: $150.000</span>
-                        <span id="food-budget-pct" class="font-semibold text-emerald-400">0% ejecutado</span>
-                    </div>
-                </div>
-
-                <!-- Card 2: Split Strategy (Base vs Verdulería) -->
-                <div class="glass-card rounded-2xl p-5 space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Estrategia de Compra en 2 Bloques</span>
-                        <i class="fa-solid fa-boxes-packing text-sky-400"></i>
-                    </div>
-                    <div class="space-y-2 text-xs">
-                        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 flex justify-between items-center">
-                            <div>
-                                <p class="font-semibold text-white">1. Compra Base Freezer y Alacena</p>
-                                <p class="text-[11px] text-slate-400">Granja avícola, carnicería y mayorista</p>
-                            </div>
-                            <span id="base-split-total" class="font-bold text-sky-300 text-sm">~$128.000</span>
-                        </div>
-                        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 flex justify-between items-center">
-                            <div>
-                                <p class="font-semibold text-white">2. Verdulería Escalonada (2-3 tandas)</p>
-                                <p class="text-[11px] text-slate-400">Fresco para fraccionar y ensaladas</p>
-                            </div>
-                            <span id="veggie-split-total" class="font-bold text-emerald-300 text-sm">~$22.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Freezer Total Portions & Cost per Meal -->
-                <div class="glass-card rounded-2xl p-5 space-y-3 flex flex-col justify-between">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Rendimiento del Meal Prep</span>
-                        <span class="text-[11px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-semibold">~55 comidas/mes</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 my-auto">
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-                            <p class="text-[11px] text-slate-400">Módulos en Freezer</p>
-                            <p id="total-freezer-modules-card" class="text-xl font-extrabold text-white mt-0.5">76 u.</p>
-                        </div>
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-                            <p class="text-[11px] text-slate-400">Costo Promedio Plato</p>
-                            <p id="avg-plate-cost-card" class="text-xl font-extrabold text-emerald-400 mt-0.5">$2.720</p>
-                        </div>
-                    </div>
-                    <button onclick="refillFullBatchModal()" class="w-full py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs font-semibold transition flex items-center justify-center gap-1.5">
-                        <i class="fa-solid fa-kitchen-set"></i> Registrar Tarde de Producción (Cargar Stock)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Freezer Modules Inventory + Shopping List Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                
-                <!-- Left: Inventario de Módulos en Freezer (5 cols) -->
-                <div class="lg:col-span-5 glass-card rounded-2xl p-5 sm:p-6 space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h3 class="font-bold text-base sm:text-lg text-white flex items-center gap-2">
-                                <i class="fa-regular fa-snowflake text-sky-400"></i> Stock de Módulos en Freezer
-                            </h3>
-                            <p class="text-xs text-slate-400">Controlá cuántas porciones listas te quedan</p>
-                        </div>
-                    </div>
-
-                    <div id="freezer-inventory-list" class="space-y-3">
-                        <!-- Dynamically populated via JS -->
-                    </div>
-
-                    <!-- Meal Prep Tip Box -->
-                    <div class="p-3.5 rounded-xl bg-sky-950/40 border border-sky-500/20 text-xs text-slate-300 space-y-1">
-                        <p class="font-bold text-sky-300 flex items-center gap-1.5">
-                            <i class="fa-solid fa-lightbulb"></i> Tip de Almacenamiento Rápido:
-                        </p>
-                        <p class="text-[11px] leading-relaxed text-slate-300">
-                            Aplastá las bolsitas de carne marinada bien chatas antes de congelar (descongelan en 5 min bajo agua fría) y congelá el arroz en porciones individuales para que pierda humedad y salga un <strong>Chao Fan</strong> de grano suelto en 5 minutos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Right: Lista de Compras Mensual $150.000 ARS (7 cols) -->
-                <div class="lg:col-span-7 glass-card rounded-2xl p-5 sm:p-6 space-y-4">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div>
-                            <h3 class="font-bold text-base sm:text-lg text-white flex items-center gap-2">
-                                <i class="fa-solid fa-cart-shopping text-emerald-400"></i> Lista de Compras Planificada ($150.000 ARS)
-                            </h3>
-                            <p class="text-xs text-slate-400">Marcá lo que vayas comprando y ajustá el precio real si varió. Se sincroniza con Gastos Generales.</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="markAllShopping(true)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-emerald-400 font-medium transition">
-                                Marcar todo
-                            </button>
-                            <button onclick="markAllShopping(false)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-400 font-medium transition">
-                                Desmarcar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Shopping Items List -->
-                    <div id="shopping-list-container" class="space-y-2.5 max-h-[460px] overflow-y-auto pr-1">
-                        <!-- Rendered dynamically via JS -->
-                    </div>
-
-                    <!-- Add Extra Food Purchase Item Form -->
-                    <form onsubmit="addCustomFoodItem(event)" class="pt-2 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-12 gap-2">
-                        <input type="text" id="new-food-name" required placeholder="Agregar extra (ej. Semillas de sésamo, Maicena...)" class="sm:col-span-5 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-                        <input type="text" id="new-food-qty" required placeholder="Cantidad (ej. 250g)" class="sm:col-span-3 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-                        <input type="number" id="new-food-price" required min="1" placeholder="Precio ARS" class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
-                        <button type="submit" class="sm:col-span-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl py-2 text-xs transition">
-                            + Sumar
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             VIEW 3: GASTOS GENERALES DEL MES
-             ========================================== -->
-        <section id="view-gastos" class="hidden space-y-6">
-            <!-- Summary Row -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="glass-card rounded-2xl p-5 border border-indigo-500/30">
-                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Total Gastos del Mes</span>
-                    <h3 id="general-total-spent" class="text-2xl sm:text-3xl font-extrabold text-white mt-2">$0</h3>
-                    <p class="text-xs text-slate-400 mt-1">Incluye compras de Meal Prep + Gastos Generales</p>
-                </div>
-                <div class="glass-card rounded-2xl p-5">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Alimentación (Sincronizado)</span>
-                    <h3 id="general-food-synced" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-2">$0</h3>
-                    <p class="text-xs text-slate-400 mt-1">Ítems marcados como comprados en la pestaña 2</p>
-                </div>
-                <div class="glass-card rounded-2xl p-5">
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Otros Gastos del Mes</span>
-                    <h3 id="general-other-spent" class="text-2xl sm:text-3xl font-extrabold text-amber-400 mt-2">$0</h3>
-                    <p class="text-xs text-slate-400 mt-1">Servicios, transporte, salidas, extras</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <!-- Left: Add Expense Form & Category Breakdown (5 cols) -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="glass-card rounded-2xl p-5 space-y-4">
-                        <h3 class="font-bold text-base text-white flex items-center gap-2">
-                            <i class="fa-solid fa-plus-circle text-emerald-400"></i> Registrar Nuevo Gasto General
-                        </h3>
-                        <form onsubmit="addGeneralExpense(event)" class="space-y-3 text-xs sm:text-sm">
-                            <div>
-                                <label class="block text-xs text-slate-400 mb-1">Descripción del gasto</label>
-                                <input type="text" id="exp-desc" required placeholder="Ej. Carga SUBE, Internet, Salida con amigos..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-emerald-500">
-                            </div>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div>
-                                    <label class="block text-xs text-slate-400 mb-1">Monto (ARS)</label>
-                                    <input type="number" id="exp-amount" required min="1" placeholder="Ej. 15000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-emerald-500">
-                                </div>
-                                <div>
-                                    <label class="block text-xs text-slate-400 mb-1">Categoría</label>
-                                    <select id="exp-cat" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-emerald-500">
-                                        <option value="Servicios & Fijos">Servicios & Fijos</option>
-                                        <option value="Transporte">Transporte</option>
-                                        <option value="Estudio / Trabajo">Estudio / Trabajo</option>
-                                        <option value="Salidas / Ocio">Salidas / Ocio</option>
-                                        <option value="Salud & Deporte">Salud & Deporte</option>
-                                        <option value="Alimentación Extra">Alimentación Extra</option>
-                                        <option value="Otros">Otros</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition shadow-lg shadow-emerald-950/50">
-                                Guardar Gasto y Marcar Hábito
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Category Distribution Bars -->
-                    <div class="glass-card rounded-2xl p-5 space-y-3">
-                        <h3 class="font-bold text-sm text-white uppercase tracking-wider">Distribución por Rubro</h3>
-                        <div id="expense-categories-bars" class="space-y-2.5 text-xs">
-                            <!-- Populated via JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Expense History List (7 cols) -->
-                <div class="lg:col-span-7 glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h3 class="font-bold text-base sm:text-lg text-white">Movimientos Registrados</h3>
-                            <p class="text-xs text-slate-400">Historial de gastos generales + resumen sincronizado de Meal Prep</p>
-                        </div>
-                    </div>
-
-                    <div id="expenses-table-container" class="space-y-2.5 max-h-[450px] overflow-y-auto pr-1">
-                        <!-- Populated via JS -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             VIEW 4: HÁBITOS DIARIOS & CONSTANCIA
-             ========================================== -->
-        <section id="view-habitos" class="hidden space-y-6">
-            <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Constancia Semanal</span>
-                    <h2 class="text-xl sm:text-2xl font-bold text-white mt-0.5">Tracker de Hábitos & Organización</h2>
-                    <p class="text-xs sm:text-sm text-slate-400">
-                        Los hábitos de almuerzo equilibrado (45/30/25) y registro de gastos también se marcan automáticamente cuando usás la app.
-                    </p>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="bg-slate-900 border border-slate-800 px-4 py-2.5 rounded-xl text-center">
-                        <span class="text-[11px] text-slate-400 block">Cumplimiento Semanal</span>
-                        <span id="habits-overall-pct" class="text-xl font-extrabold text-emerald-400">0%</span>
-                    </div>
-                    <button onclick="resetWeeklyHabits()" class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-semibold transition">
-                        Reiniciar Semana
-                    </button>
-                </div>
-            </div>
-
-            <!-- Weekly Habits Table Card -->
-            <div class="glass-card rounded-2xl p-4 sm:p-6 overflow-x-auto">
-                <table class="w-full min-w-[640px] text-left border-collapse">
-                    <thead>
-                        <tr class="border-b border-slate-800 text-xs text-slate-400 uppercase">
-                            <th class="py-3 pr-4 w-2/5">Hábito Diario</th>
-                            <th class="py-3 text-center">Lun</th>
-                            <th class="py-3 text-center">Mar</th>
-                            <th class="py-3 text-center">Mié</th>
-                            <th class="py-3 text-center">Jue</th>
-                            <th class="py-3 text-center">Vie</th>
-                            <th class="py-3 text-center">Sáb</th>
-                            <th class="py-3 text-center">Dom</th>
-                            <th class="py-3 text-right pl-2">Progreso</th>
-                        </tr>
-                    </thead>
-                    <tbody id="habits-table-body" class="divide-y divide-slate-800/70 text-xs sm:text-sm">
-                        <!-- Populated via JS -->
-                    </tbody>
-                </table>
-
-                <!-- Add New Habit Form -->
-                <form onsubmit="addNewHabit(event)" class="mt-5 pt-4 border-t border-slate-800 flex flex-col sm:flex-row gap-2">
-                    <input type="text" id="new-habit-input" required placeholder="Agregar nuevo hábito (ej. Tomar 2L de agua, Descongelar cena a la mañana...)" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-emerald-500">
-                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm transition">
-                        + Agregar Hábito
-                    </button>
-                </form>
-            </div>
-        </section>
-
+    <!-- 4. CONTENEDOR CENTRAL DE MÓDULOS -->
+    <main id="app-viewport" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-6 space-y-6">
+        <div id="boot-status-box" class="retro-panel p-5 border-l-4 border-l-acid font-mono text-xs space-y-2">
+            <h2 class="font-pixel text-2xl text-acid">INICIALIZANDO MÓDULOS...</h2>
+            <p class="text-stone-300">Verificando archivos JavaScript en tu carpeta:</p>
+            <ul id="boot-log-list" class="space-y-1 pl-4"></ul>
+        </div>
     </main>
 
-    <!-- ==========================================
-         FLOATING GEMINI ASSISTANT DRAWER (SIDEBAR)
-         ========================================== -->
-    <div id="gemini-drawer-backdrop" onclick="toggleGeminiDrawer()" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden transition-opacity"></div>
+    <!-- 5. FOOTER -->
+    <footer class="border-t-2 border-stone-800 bg-black py-4 px-4 text-center font-mono text-xs text-stone-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div><span class="text-acid">[SYS_READY]</span> Arquitectura Modular • LocalStorage & GitHub Gist</div>
+            <div>Best viewed in 1024x768 • <span class="text-purple-400">flog.dani.420</span></div>
+        </div>
+    </footer>
 
-    <aside id="gemini-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[440px] bg-slate-900 border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
-        <!-- Drawer Header -->
-        <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+    <!-- 6. SIDEBAR ORÁCULO GEMINI -->
+    <div id="gemini-drawer-backdrop" onclick="window.SyncAI && SyncAI.toggleGeminiDrawer()" class="fixed inset-0 bg-black/75 z-40 hidden"></div>
+
+    <aside id="gemini-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-stone-950 border-l-4 border-purple-500 z-50 transform translate-x-full transition-transform duration-200 flex flex-col">
+        <div class="p-3.5 border-b-2 border-stone-800 flex items-center justify-between bg-black">
             <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl gemini-gradient flex items-center justify-center text-white shadow-md">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <div class="w-9 h-9 retro-box bg-purple-900 text-purple-200 flex items-center justify-center">
+                    <i class="fa-solid fa-eye"></i>
                 </div>
                 <div>
-                    <div class="flex items-center gap-2">
-                        <h3 class="font-bold text-sm text-white">Asistente Gemini</h3>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">Conectado a tu App</span>
-                    </div>
-                    <p class="text-[11px] text-slate-400">Lee tu freezer, tus $150.000 y tus platos en vivo</p>
+                    <h3 class="font-pixel text-xl text-white leading-none">ORÁCULO_GEMINI.IRC</h3>
+                    <p class="text-[11px] text-stone-400 font-mono">Lee tus ingresos, gastos, freezer y hábitos</p>
                 </div>
             </div>
             <div class="flex items-center gap-1">
-                <button onclick="toggleApiKeyConfig()" title="Configurar API Key opcional (para uso externo)" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs">
-                    <i class="fa-solid fa-key"></i>
-                </button>
-                <button onclick="clearChatHistory()" title="Limpiar conversación" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs">
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
-                <button onclick="toggleGeminiDrawer()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-sm">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <button type="button" onclick="window.SyncAI && SyncAI.toggleApiKeyConfig()" class="retro-btn px-2 py-1 bg-stone-900 text-stone-300 text-xs"><i class="fa-solid fa-key"></i></button>
+                <button type="button" onclick="window.SyncAI && SyncAI.clearChatHistory()" class="retro-btn px-2 py-1 bg-stone-900 text-stone-300 text-xs"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" onclick="window.SyncAI && SyncAI.toggleGeminiDrawer()" class="retro-btn px-2 py-1 bg-rose-950 text-rose-300 text-xs">X</button>
             </div>
         </div>
 
-        <!-- Optional Custom API Key Collapsible Bar (For local HTML export) -->
-        <div id="api-key-bar" class="hidden bg-slate-950 px-4 py-3 border-b border-slate-800 text-xs space-y-2">
+        <div id="api-key-bar" class="hidden bg-black px-4 py-3 border-b-2 border-stone-800 text-xs font-mono space-y-2">
             <div class="flex items-center justify-between">
-                <p class="text-slate-200 font-semibold flex items-center gap-1.5">
-                    <i class="fa-solid fa-shield-halved text-emerald-400"></i> API Key Segura (LocalStorage)
-                </p>
-                <span id="drawer-api-status" class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400">Sin clave local</span>
+                <span class="text-acid font-bold">API Key (`mp_gemini_api_key`)</span>
+                <span id="drawer-api-status" class="text-[10px] px-1.5 py-0.5 bg-stone-900 text-stone-400">Sin clave</span>
             </div>
-            <p class="text-[11px] text-slate-400">Tu clave se guarda únicamente en la memoria de este navegador (`mp_gemini_api_key`) y nunca se sube al código de GitHub.</p>
             <div class="flex gap-2">
-                <div class="relative flex-1">
-                    <input type="password" id="custom-api-key-input" placeholder="AIzaSy... (Google AI Studio)" class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-2.5 pr-8 py-1.5 text-white text-xs focus:outline-none focus:border-emerald-500">
-                    <button type="button" onclick="togglePasswordVisibility('custom-api-key-input', 'eye-drawer-api')" class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs">
-                        <i id="eye-drawer-api" class="fa-regular fa-eye"></i>
-                    </button>
-                </div>
-                <button onclick="saveCustomApiKeyFromDrawer()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition">Guardar</button>
+                <input type="password" id="custom-api-key-input" placeholder="AIzaSy..." class="flex-1 retro-input px-2.5 py-1 text-xs">
+                <button type="button" onclick="window.SyncAI && SyncAI.saveCustomApiKeyFromDrawer()" class="retro-btn retro-btn-acid px-3 py-1 text-xs font-bold">GUARDAR</button>
             </div>
         </div>
 
-        <!-- Quick Context Prompts -->
-        <div class="px-4 py-2.5 bg-slate-900/90 border-b border-slate-800 overflow-x-auto flex gap-2 shrink-0">
-            <button onclick="askGeminiQuick('Mirando mi stock actual del freezer, ¿qué almuerzo rápido puedo armar hoy que cumpla 45% verdura, 30% proteína y 25% carbo?')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 border border-slate-700 text-[11px] font-medium whitespace-nowrap transition">
-                🍱 ¿Qué cocino hoy con mi freezer?
-            </button>
-            <button onclick="askGeminiQuick('Analizá cómo vengo con mi presupuesto de $150.000 ARS y mis gastos generales. ¿Algún consejo para optimizar compras?')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-slate-700 text-[11px] font-medium whitespace-nowrap transition">
-                💰 Analizar mis $150k y gastos
-            </button>
-            <button onclick="askGeminiQuick('Dame una idea de marinada oriental nueva para mis tiras de cerdo o pollo usando ingredientes económicos de mi alacena.')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 text-[11px] font-medium whitespace-nowrap transition">
-                🥢 Nueva marinada oriental
-            </button>
+        <div class="px-3 py-2 bg-stone-900 border-b-2 border-stone-800 overflow-x-auto flex gap-2 shrink-0 font-mono">
+            <button type="button" onclick="window.SyncAI && SyncAI.askGeminiQuick('Analizá mi balance entre ingresos y egresos de este mes. ¿Cómo puedo mejorar mi ahorro?')" class="retro-btn px-2 py-1 bg-black text-acid text-[11px] whitespace-nowrap">💸 Auditar Gastos/Ingresos</button>
+            <button type="button" onclick="window.SyncAI && SyncAI.askGeminiQuick('Mirando mi freezer, ¿qué almuerzo armo hoy en 10 min con regla 45/30/25?')" class="retro-btn px-2 py-1 bg-black text-amber-300 text-[11px] whitespace-nowrap">🍱 ¿Qué cocino hoy?</button>
         </div>
 
-        <!-- Chat Messages Area -->
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs sm:text-sm">
-            <!-- Initial Welcome Message -->
-            <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl rounded-tl-xs p-3.5 text-slate-200 chat-msg">
-                <p>¡Hola Dani! Soy tu asistente Gemini integrado en tu organizador.</p>
-                <p>Estoy leyendo en vivo tu <strong>stock del freezer</strong>, tu presupuesto de <strong>$150.000 ARS</strong> y tus <strong>hábitos</strong>. Podés preguntarme qué cocinar hoy respetando el <strong>45% verdura / 30% proteína / 25% carbohidrato</strong>, cómo reemplazar un ingrediente si subió de precio o pedirme recetas estilo Chao Fan y Bibimbap.</p>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs font-mono">
+            <div class="retro-box bg-black p-3 text-stone-200 chat-msg border-l-4 border-l-acid">
+                <p class="text-acid font-bold mb-1">&lt;ORÁCULO_420&gt; dice:</p>
+                <p>¡Qué hacés Dani! Conectado a tus Finanzas, Freezer ($150k) y Hábitos.</p>
             </div>
         </div>
 
-        <!-- Chat Input Box -->
-        <form onsubmit="handleChatSubmit(event)" class="p-3 border-t border-slate-800 bg-slate-950/80 flex items-center gap-2">
-            <input type="text" id="chat-input" placeholder="Preguntale a Gemini sobre tu freezer o gastos..." class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-purple-500">
-            <button type="submit" id="chat-send-btn" class="px-4 py-2.5 rounded-xl gemini-gradient text-white font-semibold text-xs sm:text-sm shadow-md hover:opacity-95 transition flex items-center justify-center">
-                <i class="fa-solid fa-paper-plane"></i>
-            </button>
+        <form onsubmit="window.SyncAI && SyncAI.handleChatSubmit(event)" class="p-3 border-t-2 border-stone-800 bg-black flex items-center gap-2 font-mono">
+            <input type="text" id="chat-input" placeholder="Escribir mensaje al Oráculo..." class="flex-1 retro-input px-3 py-2 text-xs">
+            <button type="submit" id="chat-send-btn" class="retro-btn retro-btn-purple px-4 py-2 text-xs font-bold">ENVIAR</button>
         </form>
     </aside>
 
-    <!-- ==========================================
-         MODAL: SECURE CREDENTIALS, GIST CLOUD & JSON BACKUP
-         ========================================== -->
-    <div id="backup-modal" class="fixed inset-0 bg-black/75 backdrop-blur-xs z-50 hidden items-center justify-center p-3 sm:p-4 overflow-y-auto">
-        <div class="glass-card bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-5 sm:p-6 space-y-5 my-8 max-h-[92vh] overflow-y-auto shadow-2xl">
-            <!-- Modal Header -->
-            <div class="flex items-start justify-between gap-3 border-b border-slate-800 pb-4">
+    <!-- 7. MODAL DE BACKUP / GIST -->
+    <div id="backup-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-3 overflow-y-auto font-mono">
+        <div class="retro-panel max-w-2xl w-full p-5 space-y-5 my-8 max-h-[92vh] overflow-y-auto">
+            <div class="flex items-start justify-between gap-3 border-b-2 border-stone-700 pb-3">
                 <div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-500/30">
-                            GitHub Pages Ready
-                        </span>
-                        <span id="modal-sync-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300">
-                            Solo LocalStorage
-                        </span>
-                    </div>
-                    <h3 class="font-bold text-base sm:text-lg text-white mt-1.5 flex items-center gap-2">
-                        <i class="fa-solid fa-cloud-arrow-up text-sky-400"></i> Centro de Sincronización Gist, Backup JSON y API Segura
-                    </h3>
-                    <p class="text-xs text-slate-400 mt-0.5">
-                        Tus claves quedan guardadas exclusivamente en el `LocalStorage` de tu navegador para que puedas subir `index.html` a GitHub sin exponer secretos.
-                    </p>
+                    <span id="modal-sync-badge" class="px-2 py-0.5 text-[10px] font-bold bg-stone-800 text-stone-300 border border-stone-600">LOCALSTORAGE</span>
+                    <h3 class="font-pixel text-2xl text-white mt-1">CONFIGURACIÓN: GIST CLOUD, BACKUP .JSON & API</h3>
                 </div>
-                <button onclick="closeBackupModal()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <button type="button" onclick="window.SyncAI && SyncAI.closeBackupModal()" class="retro-btn px-2.5 py-1 bg-rose-950 text-rose-300 text-xs">X</button>
             </div>
 
-            <!-- 1. GEMINI API KEY SECTION -->
-            <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4 space-y-3">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-                            <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i> 1. Clave de API de Gemini (`mp_gemini_api_key`)
-                        </h4>
-                        <p class="text-[11px] text-slate-400">
-                            Necesaria para usar el Chat de Gemini cuando alojás la web en tu propio GitHub Pages.
-                        </p>
-                    </div>
-                    <span id="gemini-key-status-pill" class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 self-start sm:self-center">
-                        No configurada
-                    </span>
+            <div class="retro-box bg-black p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-xs font-bold text-purple-300">1. CLAVE DE API DE GEMINI</h4>
+                    <span id="gemini-key-status-pill" class="text-[10px] px-2 py-0.5 bg-stone-900 text-stone-400">No configurada</span>
                 </div>
-
                 <div class="flex flex-col sm:flex-row gap-2">
-                    <div class="relative flex-1">
-                        <input type="password" id="modal-gemini-key" placeholder="Pegá tu API Key de Google AI Studio (AIzaSy...)" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-3.5 pr-10 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-purple-500">
-                        <button type="button" onclick="togglePasswordVisibility('modal-gemini-key', 'eye-modal-gemini')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs">
-                            <i id="eye-modal-gemini" class="fa-regular fa-eye"></i>
-                        </button>
-                    </div>
-                    <button onclick="saveGeminiKeyFromModal()" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition shrink-0">
-                        Guardar API Key
-                    </button>
-                    <button onclick="clearGeminiKey()" title="Borrar API Key del navegador" class="px-3 py-2.5 rounded-xl bg-slate-800 hover:bg-rose-950/60 text-slate-400 hover:text-rose-300 border border-slate-700 text-xs transition shrink-0">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
+                    <input type="password" id="modal-gemini-key" placeholder="Pegá tu API Key (AIzaSy...)" class="flex-1 retro-input px-3 py-2 text-xs">
+                    <button type="button" onclick="window.SyncAI && SyncAI.saveGeminiKeyFromModal()" class="retro-btn retro-btn-purple px-3 py-2 text-xs font-bold">GUARDAR KEY</button>
+                    <button type="button" onclick="window.SyncAI && SyncAI.clearGeminiKey()" class="retro-btn bg-stone-900 text-rose-400 px-3 py-2 text-xs"><i class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
 
-            <!-- 2. GITHUB GIST CLOUD SYNC SECTION -->
-            <div class="bg-slate-950/70 border border-sky-500/30 rounded-2xl p-4 space-y-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-                            <i class="fa-brands fa-github text-sky-400"></i> 2. Sincronización en la Nube con GitHub Gist
-                        </h4>
-                        <p class="text-[11px] text-slate-400">
-                            Mantené sincronizados tu freezer, gastos y hábitos entre tu PC y tu celular sin hacer `git commit` manual.
-                        </p>
-                    </div>
-                    <span id="last-synced-label" class="text-[11px] text-sky-300 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-lg font-medium">
-                        Últ. sinc: Nunca
-                    </span>
+            <div class="retro-box bg-black p-4 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-xs font-bold text-sky-300">2. SINCRONIZACIÓN CON GITHUB GIST</h4>
+                    <span id="last-synced-label" class="text-[10px] text-sky-300 bg-sky-950 px-2 py-0.5 border border-sky-600">Últ. sinc: Nunca</span>
                 </div>
-
-                <!-- Token & Gist ID Inputs -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">
-                            GitHub Personal Access Token (Permiso `gist`)
-                        </label>
-                        <div class="relative">
-                            <input type="password" id="modal-github-pat" placeholder="ghp_xxxxxxxxxxxx..." class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-3 pr-9 py-2 text-xs text-white focus:outline-none focus:border-sky-500">
-                            <button type="button" onclick="togglePasswordVisibility('modal-github-pat', 'eye-modal-pat')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs">
-                                <i id="eye-modal-pat" class="fa-regular fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-semibold text-slate-300 mb-1">
-                            ID del Gist (`mealprep_data.json`)
-                        </label>
-                        <div class="flex gap-1.5">
-                            <input type="text" id="modal-gist-id" placeholder="Ej: a1b2c3d4e5f6... (o creá uno nuevo)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-500">
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <input type="password" id="modal-github-pat" placeholder="GitHub Token (ghp_...)" class="w-full retro-input px-3 py-1.5 text-xs">
+                    <input type="text" id="modal-gist-id" placeholder="Gist ID..." class="w-full retro-input px-3 py-1.5 text-xs">
                 </div>
-
-                <!-- Auto-sync toggle + Save Credentials -->
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
-                    <label class="inline-flex items-center gap-2.5 cursor-pointer text-xs text-slate-300 select-none">
-                        <input type="checkbox" id="modal-gist-autosync" onchange="saveGistSettingsFromModal()" class="w-4 h-4 accent-sky-500 rounded cursor-pointer">
-                        <span><strong>Auto-Sync:</strong> Subir cambios al Gist automáticamente al modificar datos</span>
+                <div class="flex items-center justify-between gap-2 pt-1 text-xs">
+                    <label class="inline-flex items-center gap-2 cursor-pointer text-stone-300">
+                        <input type="checkbox" id="modal-gist-autosync" onchange="window.SyncAI && SyncAI.saveGistSettingsFromModal()" class="w-4 h-4 accent-lime-400">
+                        <span>Auto-Sync</span>
                     </label>
-                    <button onclick="saveGistSettingsFromModal()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-300 border border-sky-500/30 text-xs font-semibold transition">
-                        <i class="fa-solid fa-floppy-disk mr-1"></i> Guardar Credenciales Gist
-                    </button>
+                    <button type="button" onclick="window.SyncAI && SyncAI.saveGistSettingsFromModal()" class="retro-btn bg-stone-800 text-sky-300 px-3 py-1 text-xs">Guardar Credenciales</button>
                 </div>
-
-                <!-- Cloud Action Buttons: Create New Gist, Push, Pull -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 border-t border-slate-800/80">
-                    <button onclick="createNewSecretGist()" id="btn-create-gist" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 font-semibold text-xs flex items-center justify-center gap-2 transition">
-                        <i class="fa-solid fa-wand-sparkles"></i> Crear Gist Secreto Nuevo
-                    </button>
-                    <button onclick="pushToGist(false)" id="btn-push-gist" class="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-md shadow-emerald-950/50">
-                        <i class="fa-solid fa-cloud-arrow-up"></i> Subir a Gist (Push)
-                    </button>
-                    <button onclick="pullFromGist()" id="btn-pull-gist" class="py-2.5 px-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-md shadow-sky-950/50">
-                        <i class="fa-solid fa-cloud-arrow-down"></i> Descargar de Gist (Pull)
-                    </button>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-stone-800 text-xs">
+                    <button type="button" onclick="window.SyncAI && SyncAI.createNewSecretGist()" id="btn-create-gist" class="retro-btn bg-stone-900 text-amber-300 py-2 px-3 font-bold">+ Crear Gist</button>
+                    <button type="button" onclick="window.SyncAI && SyncAI.pushToGist(false)" id="btn-push-gist" class="retro-btn retro-btn-acid py-2 px-3 font-bold">PUSH</button>
+                    <button type="button" onclick="window.SyncAI && SyncAI.pullFromGist()" id="btn-pull-gist" class="retro-btn bg-sky-900 text-white py-2 px-3 font-bold">PULL</button>
                 </div>
             </div>
 
-            <!-- 3. LOCAL JSON BACKUP & FACTORY RESET -->
-            <div class="bg-slate-950/70 border border-slate-800 rounded-2xl p-4 space-y-3">
-                <div>
-                    <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-file-code text-emerald-400"></i> 3. Respaldo en Archivo Local (.JSON)
-                    </h4>
-                    <p class="text-[11px] text-slate-400">
-                        Descargá una copia completa de tus datos (sin incluir tus claves privadas) o restaurá un archivo `.json` guardado.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    <button onclick="exportDataJson()" class="py-2.5 px-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 font-semibold text-xs flex items-center justify-center gap-2 transition">
-                        <i class="fa-solid fa-download"></i> Descargar Backup (.json)
-                    </button>
-                    <label class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-xs flex items-center justify-center gap-2 cursor-pointer transition">
-                        <i class="fa-solid fa-upload text-sky-400"></i> Importar Backup (.json)
-                        <input type="file" accept=".json" onchange="importDataJson(event)" class="hidden">
+            <div class="retro-box bg-black p-4 space-y-3 text-xs">
+                <h4 class="font-bold text-acid">3. RESPALDO EN ARCHIVO LOCAL (.JSON)</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <button type="button" onclick="window.SyncAI && SyncAI.exportDataJson()" class="retro-btn bg-stone-900 text-acid py-2 px-3 font-bold">Exportar .JSON</button>
+                    <label class="retro-btn bg-stone-900 text-sky-300 py-2 px-3 font-bold text-center cursor-pointer">
+                        Importar .JSON
+                        <input type="file" accept=".json" onchange="window.SyncAI && SyncAI.importDataJson(event)" class="hidden">
                     </label>
-                    <button onclick="resetAllAppData()" class="py-2.5 px-3 rounded-xl bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 border border-rose-500/30 font-semibold text-xs flex items-center justify-center gap-2 transition">
-                        <i class="fa-solid fa-rotate-left"></i> Restaurar de Fábrica
-                    </button>
+                    <button type="button" onclick="window.SyncAI && SyncAI.resetAllAppData()" class="retro-btn bg-rose-950 text-rose-300 py-2 px-3 font-bold">Reset Fábrica</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- TOAST NOTIFICATION CONTAINER -->
-    <div id="toast-container" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 pointer-events-none"></div>
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none font-mono"></div>
 
-    <!-- ==========================================
-         APPLICATION JAVASCRIPT
-         ========================================== -->
+    <!-- CARGADOR AUTOMÁTICO MULTIRRUTA -->
     <script>
-        const STORAGE_KEY = 'dani_mealprep_finanzas_v1';
-        // Dedicated LocalStorage keys for credentials (never exported in JSON or Gist payload)
-        const LS_GEMINI_KEY = 'mp_gemini_api_key';
-        const LS_GITHUB_PAT = 'mp_github_pat';
-        const LS_GIST_ID = 'mp_github_gist_id';
-        const LS_GIST_AUTOSYNC = 'mp_gist_autosync';
-        const LS_GIST_LAST_SYNC = 'mp_gist_last_sync';
-
-        let autoSyncTimeout = null;
-
-        // 6 Pre-built balanced meals (45-50% veg, 30% prot, 25% carb)
-        const PRESET_MEALS = [
-            {
-                id: 'chaofan',
-                title: 'Chao Fan Express de Cerdo o Pollo',
-                flavor: 'Estilo Chao Fan',
-                time: '10 min',
-                vegPct: 45, protPct: 30, carbPct: 25,
-                vegKey: 'wok_mix', protKey: 'tiras_wok', carbKey: 'arroz_freezer',
-                desc: '1 bloque de arroz del freezer + 1 bolsita de cerdo/pollo en tiras + abundante mix wok congelado y repollo en juliana + huevo revuelto, soja, salsa de ostras y verdeo.',
-                stockUsed: { mixWok: 1, marinadas: 1, arroz: 1 }
-            },
-            {
-                id: 'bibimbap',
-                title: 'Bowl Bibimbap de Carne Vacuna',
-                flavor: 'Estilo Bibimbap',
-                time: '12 min',
-                vegPct: 45, protPct: 30, carbPct: 25,
-                vegKey: 'acelga_sesamo', protKey: 'tiras_wok', carbKey: 'arroz_carolina',
-                desc: 'Colchón de arroz doble carolina (25%) + bollito descongelado de acelga al sésamo, zanahoria y repollo salteado (45%) + tiras de carne con ajo y soja + 1 huevo a la plancha (30%).',
-                stockUsed: { acelga: 1, marinadas: 1 }
-            },
-            {
-                id: 'lomein',
-                title: 'Wok Lo Mein de Pollo y Vegetales',
-                flavor: 'Estilo Lo Mein',
-                time: '12 min',
-                vegPct: 45, protPct: 30, carbPct: 25,
-                vegKey: 'wok_mix', protKey: 'tiras_wok', carbKey: 'fideos_lomein',
-                desc: 'Mitad del wok lleno de mix de vegetales congelados y repollo fileteado (45%) + 1 bolsita de pollo marinado en jengibre y soja (30%) + porción controlada de tallarines salteados (25%).',
-                stockUsed: { mixWok: 1, marinadas: 1 }
-            },
-            {
-                id: 'milanesas_plato',
-                title: 'Milanesas al Horno + Super Ensalada + Arroz',
-                flavor: 'Clásico Argentino',
-                time: '15 min',
-                vegPct: 45, protPct: 30, carbPct: 25,
-                vegKey: 'ensalada_repollo', protKey: 'milanesas', carbKey: 'arroz_carolina',
-                desc: '2 milanesas caseras directo del freezer a asadera bien caliente (30%) + medio plato de ensalada fresca de repollo y zanahoria con limón (45%) + 1/4 plato de arroz o papas rústicas (25%).',
-                stockUsed: { milanesas: 1 }
-            },
-            {
-                id: 'tartita_bowl',
-                title: 'Tartita Rústica Proteica + Ensalada Fresca',
-                flavor: 'Clásico Argentino',
-                time: '12 min',
-                vegPct: 45, protPct: 30, carbPct: 25,
-                vegKey: 'relleno_tarta', protKey: 'tarta_proteica', carbKey: 'masa_tartita',
-                desc: '1 tartita individual del freezer rellena de acelga, pollo, huevo y queso port salut + una guarnición rápida de repollo o verdes para asegurar el 45% de vegetales del almuerzo.',
-                stockUsed: { tartitas: 1 }
-            },
-            {
-                id: 'salteado_power',
-                title: 'Salteado Oriental Proteico (50% Verdura)',
-                flavor: 'Estilo Chao Fan',
-                time: '10 min',
-                vegPct: 50, protPct: 30, carbPct: 20,
-                vegKey: 'wok_mix', protKey: 'tiras_wok', carbKey: 'arroz_freezer',
-                desc: 'Ideal para días livianos: mitad completa del plato de mix wok y repollo salteado al vapor/sartén (50%) + tiras de carne o cerdo con 1 huevo (30%) + medio bloque de arroz (20%).',
-                stockUsed: { mixWok: 1, marinadas: 1, arroz: 1 }
-            }
-        ];
-
-        // Default Initial State matching the $150,000 ARS Plan
-        function getDefaultState() {
-            return {
-                foodBudgetLimit: 150000,
-                customApiKey: '',
-                plate: {
-                    vegPct: 45,
-                    protPct: 30,
-                    carbPct: 25,
-                    vegKey: 'wok_mix',
-                    protKey: 'tiras_wok',
-                    carbKey: 'arroz_freezer',
-                    flavor: 'Estilo Chao Fan',
-                    title: 'Chao Fan Express de Cerdo o Pollo',
-                    time: '10 min'
-                },
-                freezer: [
-                    { id: 'milanesas', name: 'Milanesas listas (Pollo y Carne)', unit: 'porciones (2 u.)', count: 18, max: 20, icon: 'fa-drumstick-bite', color: 'rose' },
-                    { id: 'marinadas', name: 'Bolsitas Carne/Pollo/Cerdo Marinadas', unit: 'bolsitas 180g', count: 16, max: 18, icon: 'fa-bacon', color: 'rose' },
-                    { id: 'tartitas', name: 'Tartitas Individuales Pre-cocidas', unit: 'unidades', count: 9, max: 10, icon: 'fa-chart-pie', color: 'amber' },
-                    { id: 'arroz', name: 'Bloques de Arroz Pre-cocido', unit: 'porciones', count: 10, max: 12, icon: 'fa-bowl-rice', color: 'amber' },
-                    { id: 'mixWok', name: 'Bolsitas Mix Wok Crudo (Cebolla/Morrón/Zanahoria)', unit: 'bolsitas', count: 14, max: 16, icon: 'fa-carrot', color: 'emerald' },
-                    { id: 'acelga', name: 'Bollitos Acelga/Espinaca al Sésamo', unit: 'bollitos', count: 9, max: 10, icon: 'fa-leaf', color: 'emerald' }
-                ],
-                shoppingList: [
-                    { id: 's1', name: 'Suprema de pollo (Granja x 4 kg)', qty: '4 kg', price: 34000, block: 'Base Mensual', bought: true, destiny: '2,5 kg milanesas + 1,5 kg tiras wok y tartitas' },
-                    { id: 's2', name: 'Carne vacuna (Paleta / Roast beef / Cuadrada)', qty: '1,5 kg', price: 20400, block: 'Base Mensual', bought: true, destiny: '750g milanesas + 750g tiras finas bibimbap' },
-                    { id: 's3', name: 'Cerdo (Bondiola o Carré deshuesado)', qty: '1,5 kg', price: 13600, block: 'Base Mensual', bought: true, destiny: 'Tiras/cubitos para chao fan y lo mein' },
-                    { id: 's4', name: 'Huevos en granja/feria', qty: '2 maples (60 u.)', price: 12000, block: 'Base Mensual', bought: true, destiny: 'Tartitas, empanado, chao fan y bibimbap' },
-                    { id: 's5', name: 'Queso cremoso o Port Salut en trozo', qty: '1 kg', price: 10000, block: 'Base Mensual', bought: false, destiny: 'Bastones para tartitas y gratinados' },
-                    { id: 's6', name: 'Arroz (2kg doble carolina + 1kg largo) y Fideos (4 paq)', qty: '5 kg total', price: 20000, block: 'Base Mensual', bought: false, destiny: 'Base chao fan, bibimbap, lo mein y guarniciones' },
-                    { id: 's7', name: 'Harina 0000 (2kg) y Pan Rallado suelto (2kg)', qty: '4 kg total', price: 10000, block: 'Base Mensual', bought: false, destiny: 'Masa casera de tartitas y rebozado de milanesas' },
-                    { id: 's8', name: 'Verdulería Tanda 1 (Acelga, cebolla, morrón, zanahoria, repollo)', qty: '~6 kg surtidos', price: 11000, block: 'Verdulería', bought: true, destiny: 'Mix wok freezer, bollitos verdes y rellenos' },
-                    { id: 's9', name: 'Verdulería Tanda 2 (Reposición frescos quincenal)', qty: '~5 kg surtidos', price: 11000, block: 'Verdulería', bought: false, destiny: 'Ensaladas frescas, verdeo y papas rústicas' },
-                    { id: 's10', name: 'Fondo de Sabores (Soja, salsa ostras, jengibre, sésamo, aceite)', qty: 'Reposición', price: 8000, block: 'Base Mensual', bought: false, destiny: 'Marinadas orientales y aderezos' }
-                ],
-                generalExpenses: [
-                    { id: 'g1', desc: 'Carga SUBE / Transporte mensual', amount: 18500, cat: 'Transporte', date: '02/11/2026' },
-                    { id: 'g2', desc: 'Internet / Celular', amount: 24000, cat: 'Servicios & Fijos', date: '04/11/2026' }
-                ],
-                habits: [
-                    { id: 'h1', name: 'Almuerzo/Cena con regla 45% Verdura / 30% Prote / 25% Carbo', days: [true, true, false, false, false, false, false] },
-                    { id: 'h2', name: 'Cocinar en 15 min usando mi Freezer (Cero Delivery)', days: [true, true, true, false, false, false, false] },
-                    { id: 'h3', name: 'Sacar porción del freezer la noche anterior o a la mañana', days: [true, false, true, false, false, false, false] },
-                    { id: 'h4', name: 'Registrar compras y gastos del día', days: [true, true, false, false, false, false, false] },
-                    { id: 'h5', name: 'Actividad física / Movimiento diario', days: [false, true, false, true, false, false, false] }
-                ]
-            };
-        }
-
-        let appState = loadState();
-
-        function loadState() {
-            try {
-                const raw = localStorage.getItem(STORAGE_KEY);
-                if (!raw) return getDefaultState();
-                const parsed = JSON.parse(raw);
-                // Migrate legacy customApiKey if present into dedicated key
-                if (parsed.customApiKey && !localStorage.getItem(LS_GEMINI_KEY)) {
-                    localStorage.setItem(LS_GEMINI_KEY, parsed.customApiKey);
-                }
-                delete parsed.customApiKey;
-                return { ...getDefaultState(), ...parsed };
-            } catch (e) {
-                return getDefaultState();
-            }
-        }
-
-        function saveState(skipAutoSync = false) {
-            try {
-                const cleanState = { ...appState };
-                delete cleanState.customApiKey;
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(cleanState));
-                updateHeaderMetrics();
-                updateSyncStatusUI();
-
-                // Trigger debounced Gist Auto-Sync if enabled
-                const autoSyncEnabled = localStorage.getItem(LS_GIST_AUTOSYNC) === 'true';
-                const pat = getStoredGithubPat();
-                const gistId = getStoredGistId();
-                if (!skipAutoSync && autoSyncEnabled && pat && gistId) {
-                    clearTimeout(autoSyncTimeout);
-                    autoSyncTimeout = setTimeout(() => {
-                        pushToGist(true);
-                    }, 1800);
-                }
-            } catch (e) {
-                console.error('Error guardando estado en LocalStorage:', e);
-            }
-        }
-
-        // Credential helper getters
-        function getStoredGeminiKey() {
-            return (localStorage.getItem(LS_GEMINI_KEY) || '').trim();
-        }
-        function getStoredGithubPat() {
-            return (localStorage.getItem(LS_GITHUB_PAT) || '').trim();
-        }
-        function getStoredGistId() {
-            return (localStorage.getItem(LS_GIST_ID) || '').trim();
-        }
-        function togglePasswordVisibility(inputId, iconId) {
-            const input = document.getElementById(inputId);
-            const icon = document.getElementById(iconId);
-            if (!input || !icon) return;
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                input.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        }
-
-        // Format currency in ARS
-        function formatARS(num) {
-            return '$' + Number(num || 0).toLocaleString('es-AR');
-        }
-
-        // Toast Notification helper (Never uses alert)
-        function showToast(message, type = 'success') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            const bgClass = type === 'success'
-                ? 'bg-emerald-600 border-emerald-400 text-white'
-                : type === 'warning'
-                ? 'bg-amber-600 border-amber-400 text-white'
-                : 'bg-sky-600 border-sky-400 text-white';
-
-            toast.className = `px-4 py-2.5 rounded-xl border shadow-xl text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all duration-300 ${bgClass}`;
-            toast.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-circle-check' : 'fa-circle-info'}"></i> <span>${message}</span>`;
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => toast.remove(), 300);
-            }, 3200);
-        }
-
-        // Navigation Tabs Switcher
-        function switchTab(tabId) {
-            const tabs = ['plato', 'presupuesto', 'gastos', 'habitos'];
-            tabs.forEach(t => {
-                const section = document.getElementById(`view-${t}`);
-                const btn = document.getElementById(`tab-btn-${t}`);
-                if (t === tabId) {
-                    section.classList.remove('hidden');
-                    btn.classList.add('tab-active');
-                    btn.classList.remove('bg-slate-800/70', 'text-slate-300');
-                } else {
-                    section.classList.add('hidden');
-                    btn.classList.remove('tab-active');
-                    btn.classList.add('bg-slate-800/70', 'text-slate-300');
-                }
-            });
-            renderAll();
-        }
-
-        // ==========================================
-        // SECTION 1: PLATE BUILDER & PRESETS LOGIC
-        // ==========================================
-        function handleProportionSlider(changedType, rawVal) {
-            let val = parseInt(rawVal, 10);
-            let { vegPct, protPct, carbPct } = appState.plate;
-
-            if (changedType === 'veg') {
-                vegPct = val;
-                // Keep protein around 30% or adjust carb automatically so total = 100%
-                carbPct = 100 - vegPct - protPct;
-                if (carbPct < 10) {
-                    carbPct = 10;
-                    protPct = 100 - vegPct - carbPct;
-                }
-            } else if (changedType === 'prot') {
-                protPct = val;
-                carbPct = 100 - vegPct - protPct;
-                if (carbPct < 10) {
-                    carbPct = 10;
-                    vegPct = 100 - protPct - carbPct;
-                }
-            }
-
-            appState.plate.vegPct = vegPct;
-            appState.plate.protPct = protPct;
-            appState.plate.carbPct = carbPct;
-            saveState();
-            renderPlateSection();
-        }
-
-        function resetPlateProportions() {
-            appState.plate.vegPct = 45;
-            appState.plate.protPct = 30;
-            appState.plate.carbPct = 25;
-            saveState();
-            renderPlateSection();
-            showToast('Proporción restaurada al ideal: 45% Verduras / 30% Proteína / 25% Carbo');
-        }
-
-        function updateCustomPlate() {
-            const vegSelect = document.getElementById('select-veg');
-            const protSelect = document.getElementById('select-prot');
-            const carbSelect = document.getElementById('select-carb');
-            const flavorSelect = document.getElementById('select-flavor');
-
-            appState.plate.vegKey = vegSelect.value;
-            appState.plate.protKey = protSelect.value;
-            appState.plate.carbKey = carbSelect.value;
-            appState.plate.flavor = flavorSelect.value;
-            appState.plate.title = 'Plato Combinado a Medida';
-            appState.plate.time = '12 min';
-
-            saveState();
-            renderPlateSection();
-        }
-
-        function loadPresetMeal(presetId) {
-            const preset = PRESET_MEALS.find(p => p.id === presetId);
-            if (!preset) return;
-
-            appState.plate = {
-                vegPct: preset.vegPct,
-                protPct: preset.protPct,
-                carbPct: preset.carbPct,
-                vegKey: preset.vegKey,
-                protKey: preset.protKey,
-                carbKey: preset.carbKey,
-                flavor: preset.flavor,
-                title: preset.title,
-                time: preset.time
-            };
-
-            saveState();
-            renderPlateSection();
-            showToast(`Cargado en el plato: ${preset.title}`);
-        }
-
-        function getStockCount(moduleId) {
-            const item = appState.freezer.find(f => f.id === moduleId);
-            return item ? item.count : null;
-        }
-
-        function renderPlateSection() {
-            const { vegPct, protPct, carbPct, vegKey, protKey, carbKey, flavor, title, time } = appState.plate;
-
-            // Sync dropdowns & sliders
-            document.getElementById('select-veg').value = vegKey;
-            document.getElementById('select-prot').value = protKey;
-            document.getElementById('select-carb').value = carbKey;
-            document.getElementById('select-flavor').value = flavor;
-
-            document.getElementById('slider-veg').value = vegPct;
-            document.getElementById('slider-prot').value = protPct;
-            document.getElementById('slider-veg-val').textContent = `${vegPct}%`;
-            document.getElementById('slider-prot-val').textContent = `${protPct}%`;
-
-            document.getElementById('lbl-veg-pct').textContent = `${vegPct}%`;
-            document.getElementById('lbl-prot-pct').textContent = `${protPct}%`;
-            document.getElementById('lbl-carb-pct').textContent = `${carbPct}%`;
-
-            // Update conic gradient visual plate
-            const deg1 = vegPct;
-            const deg2 = vegPct + protPct;
-            const plateCircle = document.getElementById('visual-plate-circle');
-            plateCircle.style.background = `conic-gradient(#10b981 0% ${deg1}%, #f43f5e ${deg1}% ${deg2}%, #f59e0b ${deg2}% 100%)`;
-
-            document.getElementById('plate-center-flavor').textContent = flavor;
-            document.getElementById('plate-center-title').textContent = title;
-            document.getElementById('plate-center-time').innerHTML = `<i class="fa-regular fa-clock"></i> ~${time}`;
-
-            // Validate rule: 40-55% veg, >=25% prot, <=30% carb
-            const isBalanced = vegPct >= 40 && vegPct <= 55 && protPct >= 25 && carbPct <= 30;
-            const badge = document.getElementById('plate-status-badge');
-            if (isBalanced) {
-                badge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1.5';
-                badge.innerHTML = `<i class="fa-solid fa-circle-check"></i> Regla 45/30/25 Cumplida`;
-            } else {
-                badge.className = 'px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1.5';
-                badge.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Ajustar a ~45% verd / 30% prot`;
-            }
-
-            // Update Freezer Stock Hints under each selector
-            const vegStockMap = { wok_mix: 'mixWok', acelga_sesamo: 'acelga', ensalada_repollo: null, relleno_tarta: 'acelga' };
-            const protStockMap = { tiras_wok: 'marinadas', milanesas: 'milanesas', tarta_proteica: 'tartitas', huevos_queso: null };
-            const carbStockMap = { arroz_freezer: 'arroz', arroz_carolina: null, fideos_lomein: null, masa_tartita: null, papas_rusticas: null };
-
-            updateHintElement('veg-stock-hint', vegStockMap[vegKey]);
-            updateHintElement('prot-stock-hint', protStockMap[protKey]);
-            updateHintElement('carb-stock-hint', carbStockMap[carbKey]);
-
-            // Dynamic Recipe Instructions
-            const instructionsEl = document.getElementById('plate-instructions-text');
-            instructionsEl.textContent = generateDynamicInstructions(vegKey, protKey, carbKey, flavor, vegPct, protPct, carbPct);
-
-            // Render 6 Preset Cards
-            const grid = document.getElementById('preset-meals-grid');
-            grid.innerHTML = PRESET_MEALS.map(meal => `
-                <div class="glass-card rounded-2xl p-4 border border-slate-800 hover:border-emerald-500/40 transition flex flex-col justify-between space-y-3">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between gap-2">
-                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/20">
-                                ${meal.flavor}
-                            </span>
-                            <span class="text-xs text-emerald-400 font-semibold">
-                                <i class="fa-regular fa-clock"></i> ${meal.time}
-                            </span>
-                        </div>
-                        <h4 class="font-bold text-sm text-white">${meal.title}</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">${meal.desc}</p>
-                    </div>
-                    <div class="space-y-2.5 pt-2 border-t border-slate-800/80">
-                        <div class="flex items-center justify-between text-[11px] font-semibold">
-                            <span class="text-emerald-400">🥦 ${meal.vegPct}% Verd</span>
-                            <span class="text-rose-400">🥩 ${meal.protPct}% Prot</span>
-                            <span class="text-amber-400">🍚 ${meal.carbPct}% Carb</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="loadPresetMeal('${meal.id}')" class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition">
-                                Ver en el Plato
-                            </button>
-                            <button onclick="cookPresetDirectly('${meal.id}')" class="px-3 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 text-xs font-semibold transition" title="Descontar del freezer y registrar almuerzo">
-                                <i class="fa-solid fa-utensils"></i> Cocinar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function updateHintElement(elId, moduleId) {
-            const el = document.getElementById(elId);
-            if (!moduleId) {
-                el.innerHTML = `<i class="fa-solid fa-box-open text-amber-400"></i> Insumo de heladera / alacena (no gasta módulo freezer)`;
-                return;
-            }
-            const item = appState.freezer.find(f => f.id === moduleId);
-            if (item) {
-                const colorClass = item.count > 2 ? 'text-sky-300' : 'text-rose-400 font-bold';
-                el.innerHTML = `<i class="fa-regular fa-snowflake text-sky-400"></i> Quedan <span class="${colorClass}">${item.count} ${item.unit}</span> en el freezer`;
-            }
-        }
-
-        function generateDynamicInstructions(vegKey, protKey, carbKey, flavor, vegPct, protPct, carbPct) {
-            if (protKey === 'tarta_proteica') {
-                return `Llevá la tartita individual del freezer directo al horno o sartén tapada a fuego corona por 12 minutos para que la base quede bien crocante. Acompañala con un bowl mediano de repollo y zanahoria o verdes frescos para completar el ${vegPct}% de vegetales del plato.`;
-            }
-            if (protKey === 'milanesas') {
-                return `Precalentá la asadera en el horno 3 minutos. Poné las 2 milanesas directo del freezer con un hilo de aceite (7 min por lado). Mientras tanto, armá medio plato (${vegPct}%) de vegetales y sumá tu cuarto de plato (${carbPct}%) de guarnición con toque ${flavor}.`;
-            }
-            return `Calentá el wok o sartén amplia a fuego bien fuerte. Salteá primero la proteína (${protPct}% del plato) por 4 minutos para dorar. Sumá los vegetales directo sin descongelar (${vegPct}% del plato) para que queden crocantes, incorporá el carbohidrato (${carbPct}%) y terminá con el aderezo ${flavor}.`;
-        }
-
-        function logCurrentPlateMeal() {
-            const { vegKey, protKey, carbKey, title } = appState.plate;
-            const vegStockMap = { wok_mix: 'mixWok', acelga_sesamo: 'acelga', ensalada_repollo: null, relleno_tarta: null };
-            const protStockMap = { tiras_wok: 'marinadas', milanesas: 'milanesas', tarta_proteica: 'tartitas', huevos_queso: null };
-            const carbStockMap = { arroz_freezer: 'arroz', arroz_carolina: null, fideos_lomein: null, masa_tartita: null, papas_rusticas: null };
-
-            const toDeduct = [vegStockMap[vegKey], protStockMap[protKey], carbStockMap[carbKey]].filter(Boolean);
-            let deductedNames = [];
-
-            toDeduct.forEach(modId => {
-                const item = appState.freezer.find(f => f.id === modId);
-                if (item && item.count > 0) {
-                    item.count -= 1;
-                    deductedNames.push(item.name.split(' ')[0]);
-                }
-            });
-
-            // Automatically check today's habits for balanced meal & meal prep
-            markTodayHabit('h1');
-            markTodayHabit('h2');
-
-            saveState();
-            renderAll();
-
-            const msg = deductedNames.length > 0
-                ? `¡Plato registrado! Se descontó 1 porción (${deductedNames.join(', ')}) del freezer y se marcó tu hábito de hoy.`
-                : `¡Plato registrado! Se marcó tu hábito de alimentación equilibrada 45/30/25 de hoy.`;
-            showToast(msg, 'success');
-        }
-
-        function cookPresetDirectly(presetId) {
-            loadPresetMeal(presetId);
-            logCurrentPlateMeal();
-        }
-
-        // ==========================================
-        // SECTION 2: BUDGET $150K & FREEZER STOCK
-        // ==========================================
-        function getFoodSpentAmount() {
-            return appState.shoppingList
-                .filter(item => item.bought)
-                .reduce((acc, item) => acc + Number(item.price || 0), 0);
-        }
-
-        function renderBudgetAndFreezer() {
-            const spent = getFoodSpentAmount();
-            const limit = appState.foodBudgetLimit || 150000;
-            const remaining = limit - spent;
-            const pct = Math.min(100, Math.round((spent / limit) * 100));
-
-            document.getElementById('food-budget-spent').textContent = formatARS(spent);
-            document.getElementById('food-budget-limit').textContent = `de ${formatARS(limit)} ARS`;
-            document.getElementById('food-budget-bar').style.width = `${pct}%`;
-            document.getElementById('food-budget-remaining').textContent = remaining >= 0
-                ? `Disponible: ${formatARS(remaining)}`
-                : `Excedido por: ${formatARS(Math.abs(remaining))}`;
-            document.getElementById('food-budget-pct').textContent = `${pct}% ejecutado`;
-
-            // Split totals
-            const baseTotal = appState.shoppingList.filter(i => i.block === 'Base Mensual').reduce((a, b) => a + Number(b.price), 0);
-            const vegTotal = appState.shoppingList.filter(i => i.block !== 'Base Mensual').reduce((a, b) => a + Number(b.price), 0);
-            document.getElementById('base-split-total').textContent = formatARS(baseTotal);
-            document.getElementById('veggie-split-total').textContent = formatARS(vegTotal);
-
-            // Freezer total count
-            const totalModules = appState.freezer.reduce((a, b) => a + b.count, 0);
-            document.getElementById('total-freezer-modules-card').textContent = `${totalModules} porciones`;
-
-            // Render Freezer Inventory List
-            const freezerContainer = document.getElementById('freezer-inventory-list');
-            freezerContainer.innerHTML = appState.freezer.map(mod => {
-                const pctBar = Math.min(100, Math.round((mod.count / mod.max) * 100));
-                const barColor = mod.color === 'emerald' ? 'bg-emerald-500' : mod.color === 'rose' ? 'bg-rose-500' : 'bg-amber-500';
-                return `
-                    <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 space-y-2">
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-xs text-${mod.color}-400">
-                                    <i class="fa-solid ${mod.icon}"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-white">${mod.name}</h4>
-                                    <p class="text-[11px] text-slate-400">Capacidad ideal: ${mod.max} ${mod.unit}</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1.5">
-                                <button onclick="adjustFreezerStock('${mod.id}', -1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center transition">-</button>
-                                <span class="min-w-[36px] text-center font-extrabold text-sm text-white">${mod.count}</span>
-                                <button onclick="adjustFreezerStock('${mod.id}', 1)" class="w-7 h-7 rounded-lg bg-emerald-600/30 hover:bg-emerald-600 text-emerald-300 hover:text-white font-bold text-xs flex items-center justify-center transition">+</button>
-                            </div>
-                        </div>
-                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                            <div class="h-full ${barColor} transition-all duration-300" style="width: ${pctBar}%"></div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            // Render Shopping List
-            const shopContainer = document.getElementById('shopping-list-container');
-            shopContainer.innerHTML = appState.shoppingList.map(item => `
-                <div class="p-3 rounded-xl border transition flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${item.bought ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-slate-900/80 border-slate-800'}">
-                    <div class="flex items-start gap-3">
-                        <input type="checkbox" ${item.bought ? 'checked' : ''} onchange="toggleShoppingItem('${item.id}')" class="mt-1 w-4 h-4 accent-emerald-500 rounded cursor-pointer">
-                        <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span class="text-xs sm:text-sm font-bold ${item.bought ? 'line-through text-slate-400' : 'text-white'}">${item.name}</span>
-                                <span class="text-[10px] px-2 py-0.5 rounded-full font-semibold ${item.block === 'Base Mensual' ? 'bg-sky-500/15 text-sky-300' : 'bg-emerald-500/15 text-emerald-300'}">${item.block}</span>
-                                <span class="text-[11px] text-slate-400 font-medium">(${item.qty})</span>
-                            </div>
-                            <p class="text-[11px] text-slate-400 mt-0.5">${item.destiny || 'Insumo para meal prep'}</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-end gap-2 shrink-0">
-                        <div class="flex items-center bg-slate-950 border border-slate-800 rounded-lg px-2 py-1">
-                            <span class="text-xs text-slate-400 mr-1">$</span>
-                            <input type="number" value="${item.price}" onchange="updateShoppingItemPrice('${item.id}', this.value)" class="w-20 bg-transparent text-xs font-bold text-white focus:outline-none text-right">
-                        </div>
-                        <button onclick="deleteShoppingItem('${item.id}')" class="p-1.5 text-slate-500 hover:text-rose-400 text-xs" title="Eliminar ítem">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function adjustFreezerStock(modId, delta) {
-            const item = appState.freezer.find(f => f.id === modId);
-            if (!item) return;
-            item.count = Math.max(0, item.count + delta);
-            saveState();
-            renderAll();
-        }
-
-        function refillFullBatchModal() {
-            appState.freezer.forEach(mod => {
-                mod.count = mod.max;
-            });
-            saveState();
-            renderAll();
-            showToast('¡Stock de tarde de Meal Prep cargado al 100% en el freezer!', 'success');
-        }
-
-        function toggleShoppingItem(id) {
-            const item = appState.shoppingList.find(i => i.id === id);
-            if (!item) return;
-            item.bought = !item.bought;
-            if (item.bought) markTodayHabit('h4');
-            saveState();
-            renderAll();
-        }
-
-        function updateShoppingItemPrice(id, newPrice) {
-            const item = appState.shoppingList.find(i => i.id === id);
-            if (!item) return;
-            item.price = Math.max(0, parseInt(newPrice, 10) || 0);
-            saveState();
-            renderAll();
-            showToast(`Precio actualizado: ${item.name}`);
-        }
-
-        function deleteShoppingItem(id) {
-            appState.shoppingList = appState.shoppingList.filter(i => i.id !== id);
-            saveState();
-            renderAll();
-        }
-
-        function markAllShopping(status) {
-            appState.shoppingList.forEach(i => i.bought = status);
-            saveState();
-            renderAll();
-            showToast(status ? 'Todos los ítems marcados como comprados' : 'Compras desmarcadas');
-        }
-
-        function addCustomFoodItem(e) {
-            e.preventDefault();
-            const name = document.getElementById('new-food-name').value.trim();
-            const qty = document.getElementById('new-food-qty').value.trim();
-            const price = parseInt(document.getElementById('new-food-price').value, 10) || 0;
-            if (!name || price <= 0) return;
-
-            appState.shoppingList.push({
-                id: 's_' + Date.now(),
-                name,
-                qty,
-                price,
-                block: 'Extra / Reposición',
-                bought: true,
-                destiny: 'Agregado manualmente'
-            });
-
-            document.getElementById('new-food-name').value = '';
-            document.getElementById('new-food-qty').value = '';
-            document.getElementById('new-food-price').value = '';
-            markTodayHabit('h4');
-            saveState();
-            renderAll();
-            showToast(`Sumado a compras de alimentación: ${name}`);
-        }
-
-        function editMonthlyBudgetLimit() {
-            const nextLimit = appState.foodBudgetLimit === 150000 ? 180000 : appState.foodBudgetLimit === 180000 ? 200000 : 150000;
-            appState.foodBudgetLimit = nextLimit;
-            saveState();
-            renderAll();
-            showToast(`Tope mensual ajustado a ${formatARS(nextLimit)} ARS (clic de nuevo para alternar)`);
-        }
-
-        // ==========================================
-        // SECTION 3: GENERAL EXPENSES LOGIC
-        // ==========================================
-        function renderGeneralExpenses() {
-            const foodSynced = getFoodSpentAmount();
-            const otherSpent = appState.generalExpenses.reduce((acc, g) => acc + Number(g.amount || 0), 0);
-            const totalSpent = foodSynced + otherSpent;
-
-            document.getElementById('general-total-spent').textContent = formatARS(totalSpent);
-            document.getElementById('general-food-synced').textContent = formatARS(foodSynced);
-            document.getElementById('general-other-spent').textContent = formatARS(otherSpent);
-
-            // Category Breakdown
-            const catTotals = { 'Alimentación (Meal Prep)': foodSynced };
-            appState.generalExpenses.forEach(g => {
-                catTotals[g.cat] = (catTotals[g.cat] || 0) + Number(g.amount || 0);
-            });
-
-            const barsContainer = document.getElementById('expense-categories-bars');
-            barsContainer.innerHTML = Object.entries(catTotals)
-                .sort((a, b) => b[1] - a[1])
-                .map(([cat, amt]) => {
-                    const pct = totalSpent > 0 ? Math.round((amt / totalSpent) * 100) : 0;
-                    const isFood = cat.includes('Meal Prep');
-                    return `
-                        <div class="space-y-1">
-                            <div class="flex justify-between text-xs">
-                                <span class="font-medium ${isFood ? 'text-emerald-400 font-bold' : 'text-slate-300'}">${cat}</span>
-                                <span class="text-slate-300 font-semibold">${formatARS(amt)} (${pct}%)</span>
-                            </div>
-                            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="h-full ${isFood ? 'bg-emerald-500' : 'bg-indigo-500'}" style="width: ${pct}%"></div>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-            // Expenses List
-            const listContainer = document.getElementById('expenses-table-container');
-            const syncedRow = `
-                <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs sm:text-sm font-bold text-white">Compras de Alimentación & Meal Prep (Sincronizado)</p>
-                            <p class="text-[11px] text-emerald-300">Se actualiza automáticamente desde la pestaña Presupuesto $150k</p>
-                        </div>
-                    </div>
-                    <span class="font-extrabold text-sm sm:text-base text-emerald-400">${formatARS(foodSynced)}</span>
-                </div>
-            `;
-
-            const customRows = appState.generalExpenses.slice().reverse().map(g => `
-                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-slate-800 text-indigo-400 flex items-center justify-center">
-                            <i class="fa-solid fa-receipt"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs sm:text-sm font-bold text-white">${g.desc}</p>
-                            <div class="flex items-center gap-2 text-[11px] text-slate-400">
-                                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">${g.cat}</span>
-                                <span>• ${g.date}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="font-bold text-sm text-white">${formatARS(g.amount)}</span>
-                        <button onclick="deleteGeneralExpense('${g.id}')" class="text-slate-500 hover:text-rose-400 text-xs p-1">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-
-            listContainer.innerHTML = syncedRow + customRows;
-        }
-
-        function addGeneralExpense(e) {
-            e.preventDefault();
-            const desc = document.getElementById('exp-desc').value.trim();
-            const amount = parseInt(document.getElementById('exp-amount').value, 10) || 0;
-            const cat = document.getElementById('exp-cat').value;
-            if (!desc || amount <= 0) return;
-
-            const today = new Date().toLocaleDateString('es-AR');
-            appState.generalExpenses.push({
-                id: 'g_' + Date.now(),
-                desc,
-                amount,
-                cat,
-                date: today
-            });
-
-            document.getElementById('exp-desc').value = '';
-            document.getElementById('exp-amount').value = '';
-            markTodayHabit('h4');
-            saveState();
-            renderAll();
-            showToast('Gasto registrado y hábito diario completado');
-        }
-
-        function deleteGeneralExpense(id) {
-            appState.generalExpenses = appState.generalExpenses.filter(g => g.id !== id);
-            saveState();
-            renderAll();
-        }
-
-        // ==========================================
-        // SECTION 4: HABITS TRACKER LOGIC
-        // ==========================================
-        function getCurrentDayIndex() {
-            // Monday = 0 ... Sunday = 6
-            const day = new Date().getDay();
-            return day === 0 ? 6 : day - 1;
-        }
-
-        function markTodayHabit(habitId) {
-            const habit = appState.habits.find(h => h.id === habitId);
-            if (!habit) return;
-            const idx = getCurrentDayIndex();
-            habit.days[idx] = true;
-        }
-
-        function toggleHabitDay(habitId, dayIdx) {
-            const habit = appState.habits.find(h => h.id === habitId);
-            if (!habit) return;
-            habit.days[dayIdx] = !habit.days[dayIdx];
-            saveState();
-            renderAll();
-        }
-
-        function addNewHabit(e) {
-            e.preventDefault();
-            const input = document.getElementById('new-habit-input');
-            const name = input.value.trim();
-            if (!name) return;
-
-            appState.habits.push({
-                id: 'h_' + Date.now(),
-                name,
-                days: [false, false, false, false, false, false, false]
-            });
-            input.value = '';
-            saveState();
-            renderAll();
-            showToast('Nuevo hábito agregado a la semana');
-        }
-
-        function deleteHabit(habitId) {
-            appState.habits = appState.habits.filter(h => h.id !== habitId);
-            saveState();
-            renderAll();
-        }
-
-        function resetWeeklyHabits() {
-            appState.habits.forEach(h => {
-                h.days = [false, false, false, false, false, false, false];
-            });
-            saveState();
-            renderAll();
-            showToast('Semana de hábitos reiniciada');
-        }
-
-        function renderHabitsSection() {
-            const tbody = document.getElementById('habits-table-body');
-            let totalChecks = 0;
-            const totalPossible = appState.habits.length * 7;
-
-            tbody.innerHTML = appState.habits.map(habit => {
-                const doneCount = habit.days.filter(Boolean).length;
-                totalChecks += doneCount;
-                const pct = Math.round((doneCount / 7) * 100);
-
-                const dayCells = habit.days.map((done, idx) => `
-                    <td class="py-3 text-center">
-                        <button onclick="toggleHabitDay('${habit.id}', ${idx})" class="w-7 h-7 rounded-lg border transition flex items-center justify-center mx-auto ${done ? 'bg-emerald-500 border-emerald-400 text-white shadow-sm shadow-emerald-900' : 'bg-slate-900 border-slate-700 text-transparent hover:border-slate-500'}">
-                            <i class="fa-solid fa-check text-xs"></i>
-                        </button>
-                    </td>
-                `).join('');
-
-                return `
-                    <tr class="hover:bg-slate-900/40 transition">
-                        <td class="py-3 pr-4 font-medium text-white flex items-center justify-between gap-2">
-                            <span>${habit.name}</span>
-                            <button onclick="deleteHabit('${habit.id}')" class="text-slate-600 hover:text-rose-400 text-xs">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </td>
-                        ${dayCells}
-                        <td class="py-3 text-right pl-2">
-                            <span class="inline-block min-w-[44px] text-center px-2 py-0.5 rounded-full text-xs font-bold ${pct >= 70 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-slate-300'}">
-                                ${doneCount}/7
-                            </span>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-
-            const overallPct = totalPossible > 0 ? Math.round((totalChecks / totalPossible) * 100) : 0;
-            document.getElementById('habits-overall-pct').textContent = `${overallPct}%`;
-        }
-
-        // Update top header bar live metrics
-        function updateHeaderMetrics() {
-            const spent = getFoodSpentAmount();
-            const limit = appState.foodBudgetLimit || 150000;
-            document.getElementById('header-food-budget').textContent = `${formatARS(spent)} / ${formatARS(limit)}`;
-
-            const totalModules = appState.freezer.reduce((a, b) => a + b.count, 0);
-            document.getElementById('header-freezer-count').textContent = `${totalModules} porciones`;
-
-            let totalChecks = 0;
-            const totalPossible = appState.habits.length * 7;
-            appState.habits.forEach(h => totalChecks += h.days.filter(Boolean).length);
-            const habitPct = totalPossible > 0 ? Math.round((totalChecks / totalPossible) * 100) : 0;
-            document.getElementById('header-habit-rate').textContent = `${habitPct}%`;
-        }
-
-        function renderAll() {
-            renderPlateSection();
-            renderBudgetAndFreezer();
-            renderGeneralExpenses();
-            renderHabitsSection();
-            updateHeaderMetrics();
-        }
-
-        // ==========================================
-        // SECTION 5: GEMINI AI ASSISTANT INTEGRATION
-        // ==========================================
-        function toggleGeminiDrawer() {
-            const drawer = document.getElementById('gemini-drawer');
-            const backdrop = document.getElementById('gemini-drawer-backdrop');
-            const isOpen = !drawer.classList.contains('translate-x-full');
-
-            if (isOpen) {
-                drawer.classList.add('translate-x-full');
-                backdrop.classList.add('hidden');
-            } else {
-                drawer.classList.remove('translate-x-full');
-                backdrop.classList.remove('hidden');
-                document.getElementById('chat-input').focus();
-            }
-        }
-
-        function toggleApiKeyConfig() {
-            const bar = document.getElementById('api-key-bar');
-            bar.classList.toggle('hidden');
-            document.getElementById('custom-api-key-input').value = getStoredGeminiKey();
-            updateSyncStatusUI();
-        }
-
-        function saveCustomApiKeyFromDrawer() {
-            const key = document.getElementById('custom-api-key-input').value.trim();
-            if (key) {
-                localStorage.setItem(LS_GEMINI_KEY, key);
-                showToast('API Key de Gemini guardada en LocalStorage');
-            } else {
-                localStorage.removeItem(LS_GEMINI_KEY);
-                showToast('API Key eliminada de LocalStorage', 'warning');
-            }
-            document.getElementById('api-key-bar').classList.add('hidden');
-            updateSyncStatusUI();
-        }
-
-        function clearChatHistory() {
-            const container = document.getElementById('chat-messages');
-            container.innerHTML = `
-                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl rounded-tl-xs p-3.5 text-slate-200 chat-msg">
-                    <p>Conversación reiniciada. Sigo conectado a los datos en vivo de tu freezer y tu presupuesto de $150.000 ARS. ¿En qué te ayudo?</p>
-                </div>
-            `;
-        }
-
-        function askGeminiQuick(promptText) {
-            const drawer = document.getElementById('gemini-drawer');
-            if (drawer.classList.contains('translate-x-full')) {
-                toggleGeminiDrawer();
-            }
-            document.getElementById('chat-input').value = promptText;
-            sendMessageToGemini(promptText);
-            document.getElementById('chat-input').value = '';
-        }
-
-        function handleChatSubmit(e) {
-            e.preventDefault();
-            const input = document.getElementById('chat-input');
-            const text = input.value.trim();
-            if (!text) return;
-            input.value = '';
-            sendMessageToGemini(text);
-        }
-
-        function buildLiveSystemPrompt() {
-            const foodSpent = getFoodSpentAmount();
-            const limit = appState.foodBudgetLimit || 150000;
-            const freezerSummary = appState.freezer.map(f => `- ${f.name}: ${f.count} ${f.unit}`).join('\n');
-            const pendingCompras = appState.shoppingList.filter(i => !i.bought).map(i => `${i.name} ($${i.price})`).join(', ');
-            const otherExpensesTotal = appState.generalExpenses.reduce((a, b) => a + Number(b.amount || 0), 0);
-
-            return `Sos el asistente personal de nutrición, Meal Prep y finanzas de Dani en Argentina.
-Contexto en tiempo real de la app de Dani:
-1. Regla Nutricional de sus platos: ~45% a 50% Verduras (mitad o un poco menos), ~25% a 30%+ Proteínas (un cuarto o más) y ~25% Carbohidratos (un cuarto).
-2. Sabores favoritos: Chao Fan, Bibimbap, Lo Mein oriental, y clásicos argentinos como milanesas o tartitas caseras.
-3. Presupuesto mensual de Alimentación: Tope $${limit} ARS. Lleva gastado en compras marcadas: $${foodSpent} ARS (Restante: $${limit - foodSpent} ARS).
-4. Compras pendientes de la lista: ${pendingCompras || 'Ninguna, todo comprado'}.
-5. Otros gastos generales del mes: $${otherExpensesTotal} ARS.
-6. Stock actual de módulos listos en su Freezer:
-${freezerSummary}
-
-Respondé siempre de forma cálida, práctica, breve y bien estructurada (usando negritas y viñetas cortas), enfocándote en resolver comidas en 10-15 minutos con lo que tiene hoy en el freezer y cuidando sus $150.000 ARS.`;
-        }
-
-        function formatMarkdownSimple(text) {
-            const escaped = text
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
-            const withBold = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            const lines = withBold.split('\n');
-            let html = '';
-            let inList = false;
-
-            lines.forEach(line => {
-                const trimmed = line.trim();
-                if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
-                    if (!inList) { html += '<ul>'; inList = true; }
-                    html += `<li>${trimmed.substring(2)}</li>`;
-                } else {
-                    if (inList) { html += '</ul>'; inList = false; }
-                    if (trimmed) html += `<p>${trimmed}</p>`;
-                }
-            });
-            if (inList) html += '</ul>';
-            return html;
-        }
-
-        async function fetchGeminiWithBackoff(payload, customKey) {
-            const apiKey = customKey || "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-            const delays = [1000, 2000, 4000];
-
-            for (let attempt = 0; attempt <= delays.length; attempt++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}`);
+        (async function () {
+            const filesToLoad = [
+                { label: 'core.js', candidates: ['js/core.js', './core.js'] },
+                { label: 'finanzas.js', candidates: ['js/modules/finanzas.js', 'js/finanzas.js', './finanzas.js'] },
+                { label: 'mealprep.js', candidates: ['js/modules/mealprep.js', 'js/mealprep.js', './mealprep.js'] },
+                { label: 'habitos.js', candidates: ['js/modules/habitos.js', 'js/habitos.js', './habitos.js'] },
+                { label: 'sync-ai.js', candidates: ['js/sync-ai.js', './sync-ai.js'] }
+            ];
+
+            const logUl = document.getElementById('boot-log-list');
+
+            function loadOne(candidates) {
+                return new Promise((resolve, reject) => {
+                    let i = 0;
+                    function next() {
+                        if (i >= candidates.length) return reject();
+                        const s = document.createElement('script');
+                        s.src = candidates[i];
+                        s.onload = () => resolve(candidates[i]);
+                        s.onerror = () => { s.remove(); i++; next(); };
+                        document.body.appendChild(s);
                     }
-                    return await response.json();
-                } catch (err) {
-                    if (attempt === delays.length) throw err;
-                    await new Promise(r => setTimeout(r, delays[attempt]));
-                }
-            }
-        }
-
-        async function sendMessageToGemini(userQuery) {
-            const chatContainer = document.getElementById('chat-messages');
-            const sendBtn = document.getElementById('chat-send-btn');
-
-            // Append User Message
-            const userBubble = document.createElement('div');
-            userBubble.className = 'bg-emerald-600 text-white rounded-2xl rounded-tr-xs p-3 ml-8 shadow-sm text-xs sm:text-sm';
-            userBubble.textContent = userQuery;
-            chatContainer.appendChild(userBubble);
-
-            // Append Loading Indicator
-            const loadingBubble = document.createElement('div');
-            loadingBubble.className = 'bg-slate-800/90 border border-slate-700/80 rounded-2xl rounded-tl-xs p-3.5 mr-6 text-slate-300 text-xs flex items-center gap-2';
-            loadingBubble.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-sky-400"></i> <span>Consultando tu freezer y presupuesto...</span>`;
-            chatContainer.appendChild(loadingBubble);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-            sendBtn.disabled = true;
-
-            try {
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: {
-                        parts: [{ text: buildLiveSystemPrompt() }]
-                    }
-                };
-
-                const result = await fetchGeminiWithBackoff(payload, getStoredGeminiKey());
-                const answer = result?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                if (answer) {
-                    loadingBubble.className = 'bg-slate-800/90 border border-slate-700/80 rounded-2xl rounded-tl-xs p-3.5 mr-4 text-slate-200 chat-msg';
-                    loadingBubble.innerHTML = formatMarkdownSimple(answer);
-                } else {
-                    throw new Error('Respuesta vacía');
-                }
-            } catch (error) {
-                loadingBubble.className = 'bg-rose-950/60 border border-rose-500/40 rounded-2xl p-3.5 text-rose-200 text-xs space-y-1';
-                loadingBubble.innerHTML = `
-                    <p class="font-bold"><i class="fa-solid fa-circle-exclamation"></i> No se pudo conectar con la API</p>
-                    <p>Si abriste el archivo fuera de Canvas, podés hacer clic en el ícono de llave <i class="fa-solid fa-key"></i> arriba a la derecha para ingresar tu API Key de Gemini.</p>
-                `;
-            } finally {
-                sendBtn.disabled = false;
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            }
-        }
-
-        // ==========================================
-        // SECTION 6: BACKUP MODAL (EXPORT/IMPORT)
-        // ==========================================
-        // SECTION 6: SECURE API KEY, GIST CLOUD SYNC & JSON BACKUP
-        // ==========================================
-        function updateSyncStatusUI() {
-            const hasGeminiKey = Boolean(getStoredGeminiKey());
-            const hasPat = Boolean(getStoredGithubPat());
-            const hasGistId = Boolean(getStoredGistId());
-            const lastSync = localStorage.getItem(LS_GIST_LAST_SYNC);
-
-            // Header dot status
-            const headerDot = document.getElementById('header-sync-dot');
-            if (headerDot) {
-                if (hasPat && hasGistId) {
-                    headerDot.className = 'w-2 h-2 rounded-full bg-emerald-400';
-                } else if (hasGeminiKey) {
-                    headerDot.className = 'w-2 h-2 rounded-full bg-sky-400';
-                } else {
-                    headerDot.className = 'w-2 h-2 rounded-full bg-amber-400';
-                }
-            }
-
-            // Drawer API badge
-            const drawerStatus = document.getElementById('drawer-api-status');
-            if (drawerStatus) {
-                drawerStatus.textContent = hasGeminiKey ? 'Clave activa en navegador' : 'Usando entorno / Sin clave';
-                drawerStatus.className = hasGeminiKey
-                    ? 'text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold'
-                    : 'text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400';
-            }
-
-            // Modal badges
-            const geminiPill = document.getElementById('gemini-key-status-pill');
-            if (geminiPill) {
-                geminiPill.textContent = hasGeminiKey ? '✓ Guardada en LocalStorage' : 'No configurada';
-                geminiPill.className = hasGeminiKey
-                    ? 'text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 self-start sm:self-center'
-                    : 'text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 self-start sm:self-center';
-            }
-
-            const modalSyncBadge = document.getElementById('modal-sync-badge');
-            if (modalSyncBadge) {
-                if (hasPat && hasGistId) {
-                    modalSyncBadge.textContent = 'Gist Cloud Conectado';
-                    modalSyncBadge.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
-                } else {
-                    modalSyncBadge.textContent = 'Modo LocalStorage';
-                    modalSyncBadge.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300';
-                }
-            }
-
-            const lastSyncLbl = document.getElementById('last-synced-label');
-            if (lastSyncLbl) {
-                lastSyncLbl.textContent = lastSync ? `Últ. sinc: ${lastSync}` : 'Últ. sinc: Nunca';
-            }
-        }
-
-        function openBackupModal() {
-            const modal = document.getElementById('backup-modal');
-            document.getElementById('modal-gemini-key').value = getStoredGeminiKey();
-            document.getElementById('modal-github-pat').value = getStoredGithubPat();
-            document.getElementById('modal-gist-id').value = getStoredGistId();
-            document.getElementById('modal-gist-autosync').checked = localStorage.getItem(LS_GIST_AUTOSYNC) === 'true';
-            updateSyncStatusUI();
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeBackupModal() {
-            const modal = document.getElementById('backup-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        function saveGeminiKeyFromModal() {
-            const val = document.getElementById('modal-gemini-key').value.trim();
-            if (val) {
-                localStorage.setItem(LS_GEMINI_KEY, val);
-                showToast('API Key de Gemini guardada de forma segura en este navegador');
-            } else {
-                localStorage.removeItem(LS_GEMINI_KEY);
-                showToast('API Key removida', 'warning');
-            }
-            updateSyncStatusUI();
-        }
-
-        function clearGeminiKey() {
-            localStorage.removeItem(LS_GEMINI_KEY);
-            document.getElementById('modal-gemini-key').value = '';
-            const drawerInput = document.getElementById('custom-api-key-input');
-            if (drawerInput) drawerInput.value = '';
-            updateSyncStatusUI();
-            showToast('API Key eliminada del navegador', 'warning');
-        }
-
-        function saveGistSettingsFromModal() {
-            const pat = document.getElementById('modal-github-pat').value.trim();
-            const gistId = document.getElementById('modal-gist-id').value.trim();
-            const autoSync = document.getElementById('modal-gist-autosync').checked;
-
-            if (pat) localStorage.setItem(LS_GITHUB_PAT, pat);
-            else localStorage.removeItem(LS_GITHUB_PAT);
-
-            if (gistId) localStorage.setItem(LS_GIST_ID, gistId);
-            else localStorage.removeItem(LS_GIST_ID);
-
-            localStorage.setItem(LS_GIST_AUTOSYNC, autoSync ? 'true' : 'false');
-            updateSyncStatusUI();
-            showToast('Configuración de GitHub Gist guardada en el navegador');
-        }
-
-        function getSanitizedStateForExport() {
-            const copy = JSON.parse(JSON.stringify(appState));
-            delete copy.customApiKey;
-            copy.exportedAt = new Date().toISOString();
-            return copy;
-        }
-
-        async function createNewSecretGist() {
-            saveGistSettingsFromModal();
-            const pat = getStoredGithubPat();
-            if (!pat) {
-                showToast('Ingresá primero tu GitHub Personal Access Token (con permiso gist)', 'warning');
-                return;
-            }
-
-            const btn = document.getElementById('btn-create-gist');
-            const origHtml = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Creando Gist...`;
-
-            try {
-                const response = await fetch('https://api.github.com/gists', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/vnd.github+json',
-                        'Authorization': `Bearer ${pat}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        description: 'MealPrep, Freezer & Finanzas Hub ($150k ARS) - Datos Sincronizados',
-                        public: false,
-                        files: {
-                            'mealprep_data.json': {
-                                content: JSON.stringify(getSanitizedStateForExport(), null, 2)
-                            }
-                        }
-                    })
+                    next();
                 });
-
-                if (!response.ok) {
-                    throw new Error(`GitHub API Error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                if (data && data.id) {
-                    localStorage.setItem(LS_GIST_ID, data.id);
-                    document.getElementById('modal-gist-id').value = data.id;
-                    const stamp = new Date().toLocaleString('es-AR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-                    localStorage.setItem(LS_GIST_LAST_SYNC, stamp);
-                    updateSyncStatusUI();
-                    showToast(`¡Gist secreto creado con éxito! ID: ${data.id.slice(0, 8)}...`);
-                }
-            } catch (err) {
-                showToast('Error al crear Gist. Verificá que el Token tenga tildado el permiso "gist".', 'warning');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = origHtml;
-            }
-        }
-
-        async function pushToGist(isSilentAutoSync = false) {
-            const modalOpen = !document.getElementById('backup-modal').classList.contains('hidden');
-            if (modalOpen) saveGistSettingsFromModal();
-
-            const pat = getStoredGithubPat();
-            const gistId = getStoredGistId();
-
-            if (!pat || !gistId) {
-                if (!isSilentAutoSync) {
-                    openBackupModal();
-                    showToast('Configurá tu Token y Gist ID para sincronizar con la nube', 'warning');
-                }
-                return;
             }
 
-            const btn = document.getElementById('btn-push-gist');
-            const origHtml = btn ? btn.innerHTML : '';
-            if (btn && !isSilentAutoSync) {
-                btn.disabled = true;
-                btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Subiendo...`;
-            }
-
-            try {
-                const response = await fetch(`https://api.github.com/gists/${gistId}`, {
-                    method: 'PATCH',
-                    headers: {
-                        'Accept': 'application/vnd.github+json',
-                        'Authorization': `Bearer ${pat}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        files: {
-                            'mealprep_data.json': {
-                                content: JSON.stringify(getSanitizedStateForExport(), null, 2)
-                            }
-                        }
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-
-                const stamp = new Date().toLocaleString('es-AR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-                localStorage.setItem(LS_GIST_LAST_SYNC, stamp);
-                updateSyncStatusUI();
-                if (!isSilentAutoSync) {
-                    showToast('¡Datos subidos correctamente a tu GitHub Gist (Push)!');
-                }
-            } catch (err) {
-                if (!isSilentAutoSync) {
-                    showToast('No se pudo subir al Gist. Revisá el Token o el Gist ID.', 'warning');
-                }
-            } finally {
-                if (btn && !isSilentAutoSync) {
-                    btn.disabled = false;
-                    btn.innerHTML = origHtml;
-                }
-            }
-        }
-
-        async function pullFromGist() {
-            const modalOpen = !document.getElementById('backup-modal').classList.contains('hidden');
-            if (modalOpen) saveGistSettingsFromModal();
-
-            const pat = getStoredGithubPat();
-            const gistId = getStoredGistId();
-
-            if (!gistId) {
-                openBackupModal();
-                showToast('Ingresá tu Gist ID para descargar tus datos desde la nube', 'warning');
-                return;
-            }
-
-            const btn = document.getElementById('btn-pull-gist');
-            const origHtml = btn ? btn.innerHTML : '';
-            if (btn) {
-                btn.disabled = true;
-                btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Descargando...`;
-            }
-
-            try {
-                const headers = { 'Accept': 'application/vnd.github+json' };
-                if (pat) headers['Authorization'] = `Bearer ${pat}`;
-
-                const response = await fetch(`https://api.github.com/gists/${gistId}`, {
-                    method: 'GET',
-                    headers
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-
-                const data = await response.json();
-                const fileObj = data?.files?.['mealprep_data.json'] || Object.values(data?.files || {})[0];
-                if (!fileObj || !fileObj.content) {
-                    throw new Error('Archivo mealprep_data.json no encontrado en el Gist');
-                }
-
-                const imported = JSON.parse(fileObj.content);
-                delete imported.customApiKey;
-                appState = { ...getDefaultState(), ...imported };
-                saveState(true); // Save locally without triggering redundant auto-push
-
-                const stamp = new Date().toLocaleString('es-AR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-                localStorage.setItem(LS_GIST_LAST_SYNC, stamp);
-                renderAll();
-                updateSyncStatusUI();
-                showToast('¡Datos actualizados desde tu GitHub Gist (Pull)!');
-            } catch (err) {
-                showToast('Error al descargar del Gist. Verificá el ID y tu Token.', 'warning');
-            } finally {
-                if (btn) {
-                    btn.disabled = false;
-                    btn.innerHTML = origHtml;
-                }
-            }
-        }
-
-        function exportDataJson() {
-            const cleanData = getSanitizedStateForExport();
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cleanData, null, 2));
-            const a = document.createElement('a');
-            a.setAttribute("href", dataStr);
-            a.setAttribute("download", `mealprep_finanzas_dani_${new Date().toISOString().slice(0,10)}.json`);
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            showToast('Backup .JSON descargado (sin exponer claves privadas)');
-        }
-
-        function importDataJson(event) {
-            const file = event.target.files?.[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
+            let allOk = true;
+            for (const f of filesToLoad) {
                 try {
-                    const imported = JSON.parse(e.target.result);
-                    delete imported.customApiKey;
-                    appState = { ...getDefaultState(), ...imported };
-                    saveState();
-                    renderAll();
-                    closeBackupModal();
-                    showToast('Datos restaurados exitosamente desde el archivo JSON');
-                } catch (err) {
-                    showToast('El archivo seleccionado no tiene un formato JSON válido', 'warning');
+                    const loadedPath = await loadOne(f.candidates);
+                    if (logUl) logUl.innerHTML += `<li class="text-acid">✓ Cargado: <strong>${loadedPath}</strong></li>`;
+                } catch (e) {
+                    allOk = false;
+                    if (logUl) logUl.innerHTML += `<li class="text-rose-400 font-bold">✗ FALTA ARCHIVO: <strong>${f.label}</strong> (buscado en ${f.candidates.join(' o ')})</li>`;
                 }
-            };
-            reader.readAsText(file);
-        }
+            }
 
-        function resetAllAppData() {
-            appState = getDefaultState();
-            saveState();
-            renderAll();
-            closeBackupModal();
-            showToast('Datos restaurados al plan inicial de $150.000 ARS');
-        }
-
-        // Initialize app on load
-        window.onload = function() {
-            renderAll();
-            updateSyncStatusUI();
-        };
+            if (allOk && window.AppCore) {
+                window.AppCore.initApp();
+                if (window.SyncAI) window.SyncAI.updateSyncStatusUI();
+            }
+        })();
     </script>
 </body>
 </html>

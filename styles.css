@@ -1,0 +1,189 @@
+:root {
+    --bg-obsidian: #090c09;
+    --bg-panel: #131913;
+    --bg-box: #0d120d;
+    --border-muted: #2d3e2d;
+    --acid-green: #76ff03;
+    --acid-dark: #1b3b00;
+    --haze-purple: #b388ff;
+    --stoner-amber: #ffab00;
+    --danger-red: #ff4757;
+}
+
+body {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    background-color: var(--bg-obsidian);
+    background-image: radial-gradient(#1d291d 1px, transparent 1px);
+    background-size: 16px 16px;
+    color: #e2e8e2;
+    overflow-x: hidden;
+}
+
+.font-pixel {
+    font-family: 'VT323', monospace;
+    letter-spacing: 0.04em;
+}
+
+.text-acid {
+    color: var(--acid-green);
+}
+
+.bg-acid {
+    background-color: var(--acid-green);
+}
+
+.bg-acid-dark {
+    background-color: var(--acid-dark);
+}
+
+.border-acid {
+    border-color: var(--acid-green);
+}
+
+/* Efecto Sutil de Monitor CRT 2000s */
+body.crt-scanlines::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Barra superior estilo Fotolog */
+.flog-topbar {
+    background: linear-gradient(90deg, #000000 0%, #1a0f2e 50%, #000000 100%);
+}
+
+/* Marquesina animada */
+@keyframes marquee {
+    0% { transform: translateX(10%); }
+    100% { transform: translateX(-100%); }
+}
+.marquee-track {
+    animation: marquee 32s linear infinite;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Paneles y Cajas Old-School con sombra dura */
+.retro-panel {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-muted);
+    box-shadow: 5px 5px 0px #000000;
+}
+
+.retro-box {
+    background-color: var(--bg-box);
+    border: 2px solid var(--border-muted);
+    box-shadow: 3px 3px 0px #000000;
+}
+
+/* Fotolog Gold Photo Frame */
+.flog-frame {
+    background-color: #050705;
+    border: 2px solid #eab308;
+    box-shadow: 4px 4px 0px #000000;
+}
+
+/* Inputs y Selects estilo terminal */
+.retro-input {
+    background-color: #050705;
+    border: 2px solid var(--border-muted);
+    color: #ffffff;
+    font-family: 'Space Mono', monospace;
+    transition: border-color 0.15s;
+}
+.retro-input:focus {
+    outline: none;
+    border-color: var(--acid-green);
+    box-shadow: 2px 2px 0px var(--acid-green);
+}
+
+/* Botones Brutalistas 2000s */
+.retro-btn {
+    border: 2px solid #4a5d4a;
+    box-shadow: 3px 3px 0px #000000;
+    transition: transform 0.08s, box-shadow 0.08s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.retro-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px #000000;
+    border-color: var(--acid-green);
+}
+.retro-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #000000;
+}
+
+.retro-btn-acid {
+    background-color: var(--acid-green);
+    color: #000000;
+    border-color: #ffffff;
+    font-weight: 700;
+}
+.retro-btn-acid:hover {
+    background-color: #8cff26;
+    color: #000000;
+}
+
+.retro-btn-purple {
+    background-color: #5b21b6;
+    color: #ffffff;
+    border-color: var(--haze-purple);
+}
+.retro-btn-purple:hover {
+    background-color: #6d28d9;
+}
+
+/* Pestaña activa del navegador de módulos */
+.tab-retro-active {
+    background-color: var(--acid-green) !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 3px 3px 0px #000000;
+}
+
+/* Contadores estilo Hit Counter 2000s */
+.hit-counter {
+    background-color: #040604;
+    border: 1px inset #374737;
+    padding: 1px 6px;
+    font-family: 'VT323', monospace;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+/* Plato Visual */
+.plate-retro-shadow {
+    box-shadow: 6px 6px 0px #000000, inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* Scrollbar Old School */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #070a07;
+    border-left: 1px solid #2d3e2d;
+}
+::-webkit-scrollbar-thumb {
+    background: #2d3e2d;
+    border: 1px solid #76ff03;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #76ff03;
+}
+
+/* Formato de mensajes del chat */
+.chat-msg p { margin-bottom: 0.5rem; }
+.chat-msg p:last-child { margin-bottom: 0; }
+.chat-msg ul { list-style-type: square; padding-left: 1.25rem; margin-bottom: 0.5rem; }
+.chat-msg strong { color: var(--acid-green); }
