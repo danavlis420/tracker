@@ -14,6 +14,7 @@ window.AppCore = (function () {
     const listeners = {};
     let activeModuleId = 'finanzas';
     let autoSyncTimeout = null;
+    let appInitialized = false;
 
     function getDefaultState() {
         return {
@@ -268,7 +269,8 @@ window.AppCore = (function () {
 
     function initApp() {
         const viewport = document.getElementById('app-viewport');
-        if (!viewport) return;
+        if (!viewport || appInitialized) return;
+        appInitialized = true;
 
         viewport.innerHTML = modules.map(m => `
             <section id="module-view-${m.id}" class="${m.id === activeModuleId ? '' : 'hidden'} space-y-6"></section>

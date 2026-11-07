@@ -88,11 +88,11 @@
             <!-- Botones de Sincronización y Oráculo -->
             <div class="flex items-center gap-2">
                 <div class="flex items-center bg-black border-2 border-stone-700">
-                    <button type="button" onclick="window.SyncAI && SyncAI.pullFromGist()" class="px-2.5 py-1.5 hover:bg-stone-900 text-sky-300 text-xs font-mono flex items-center gap-1 border-r border-stone-700">
+                    <button type="button" id="btn-header-pull" onclick="window.SyncAI && SyncAI.pullFromGist()" class="px-2.5 py-1.5 hover:bg-stone-900 text-sky-300 text-xs font-mono flex items-center gap-1 border-r border-stone-700">
                         <i class="fa-solid fa-cloud-arrow-down"></i>
                         <span>PULL</span>
                     </button>
-                    <button type="button" onclick="window.SyncAI && SyncAI.pushToGist(false)" class="px-2.5 py-1.5 hover:bg-stone-900 text-acid text-xs font-mono flex items-center gap-1">
+                    <button type="button" id="btn-header-push" onclick="window.SyncAI && SyncAI.pushToGist(false)" class="px-2.5 py-1.5 hover:bg-stone-900 text-acid text-xs font-mono flex items-center gap-1">
                         <i class="fa-solid fa-cloud-arrow-up"></i>
                         <span>PUSH</span>
                     </button>
